@@ -1,4 +1,4 @@
-const wishlist = () => {
+const SignIn = () => {
     return (
         <div>
 
@@ -6,4 +6,4 @@ const wishlist = () => {
     )
 }
 
-export default wishlist
+export default SignIn

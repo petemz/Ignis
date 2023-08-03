@@ -1,9 +1,9 @@
-const wishlist = () => {
+const Men = () => {
     return (
         <div>
-
+            
         </div>
     )
 }
 
-export default wishlist
+export default Men
