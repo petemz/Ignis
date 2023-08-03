@@ -7,7 +7,7 @@ import Header from "../Components/Header"
 
 const  Home = () => {
     const slides = [
-        <div style={{ backgroundImage:  `url(${homeImg2})`, backgroundPosition: 'center', backgroundSize: 'cover' }} className="w-full h-full text-xl font-semibold flex flex-col justify-end pb-[20vh]">
+        <div style={{ backgroundImage:  `url(${homeImg2})`, backgroundPosition: 'center', backgroundSize: 'cover', transition: 'background-image 0.5s' }} className="w-full h-full text-xl font-semibold flex flex-col justify-end pb-[20vh]">
             <Header />
             <div className="pl-[8vw] text-white">
                 <h1 className="text-5xl mb-3">Season Premiere</h1>
@@ -15,7 +15,7 @@ const  Home = () => {
             </div>
 
         </div>,
-        <div style={{ backgroundImage:  `url(${homeImg1})`, backgroundPosition: 'center', backgroundSize: 'cover'  }} className="w-full h-full text-xl font-semibold flex flex-col justify-end pb-[30vh]">
+        <div style={{ backgroundImage:  `url(${homeImg1})`, backgroundPosition: 'center', backgroundSize: 'cover', transition: 'background-image 0.5s' }} className="w-full h-full text-xl font-semibold flex flex-col justify-end pb-[30vh]">
             <Header color={'white'}/>
             <div className="pl-[18vw] text-white">
                 <h1 className="text-5xl mb-3">Summer's Hottest Essentials</h1>
@@ -23,7 +23,7 @@ const  Home = () => {
             </div>
 
         </div>,
-        <div style={{ backgroundImage:  `url(${homeImg3})`, backgroundPosition: 'center', backgroundSize: 'cover'  }} className="w-full h-full text-xl font-semibold flex flex-col justify-end pb-[20vh]">
+        <div style={{ backgroundImage:  `url(${homeImg3})`, backgroundPosition: 'center', backgroundSize: 'cover', transition: 'background-image 0.5s' }} className="w-full h-full text-xl font-semibold flex flex-col justify-end pb-[20vh]">
             <Header/>
             <div className="pl-[8vw]">
                 <h1 className="text-5xl mb-3">Season Premiere</h1>
@@ -31,7 +31,7 @@ const  Home = () => {
             </div>
 
         </div>,
-        <div style={{ backgroundImage:  `url(${homeImg4})`, backgroundPosition: 'center', backgroundSize: 'cover' }} className="w-full h-full text-xl font-semibold flex flex-col justify-end pb-[20vh]">
+        <div style={{ backgroundImage:  `url(${homeImg4})`, backgroundPosition: 'center', backgroundSize: 'cover', transition: 'background-image 0.5s' }} className="w-full h-full text-xl font-semibold flex flex-col justify-end pb-[20vh]">
             <Header color={'white'}/>
             <div className="pl-[8vw] text-white">
                 <h1 className="text-5xl mb-3">Graphic Tees</h1>
