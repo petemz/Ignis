@@ -1,6 +1,6 @@
-//import { useContext } from "react"
+import { useContext } from "react"
 import { Routes, Route } from "react-router-dom"
-//import { Context } from "./Context"
+import { Context } from "./Context"
 import Home from "./Pages/Home"
 import Men from "./Pages/Men"
 import Women from "./Pages/Women"
@@ -8,8 +8,10 @@ import Kids from "./Pages/Kids"
 import Wishlist from "./Pages/Wishlist"
 import Cart from "./Pages/Cart"
 import SignIn from "./Pages/SignIn"
+import Footer from "./Components/Footer"
 
 const App = () => {
+  const { currentPage } = useContext(Context)
   const routes = [
     { component: <Home />, path: '/' },
     { component: <Women />, path: '/women'},

@@ -1,11 +1,13 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect, useContext } from "react"
 import homeImg1 from "../Assets/Images/home9.jpg"
 import homeImg2 from "../Assets/Images/home2.jpg"
 import homeImg3 from "../Assets/Images/home1.jpg"
 import homeImg4 from "../Assets/Images/home4.jpg"
 import Header from "../Components/Header"
+import { Context } from "../Context"
 
 const  Home = () => {
+    const { setCurrentPage } = useContext(Context)
     const slides = [
         <div style={{ backgroundImage:  `url(${homeImg2})`, backgroundPosition: 'center', backgroundSize: 'cover', transition: 'background-image 0.5s' }} className="w-full h-full text-xl font-semibold flex flex-col justify-end pb-[20vh]">
             <Header />
@@ -51,6 +53,10 @@ const  Home = () => {
         return () => {
             clearInterval(intervalId)
         }
+    })
+
+    useEffect(() => {
+        setCurrentPage('home')
     })
 
     return (

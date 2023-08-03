@@ -17,8 +17,13 @@ import dress15 from "../Assets/Images/women/dress15.jpg"
 import dress16 from "../Assets/Images/women/dress16.jpg"
 import dress17 from "../Assets/Images/women/dress17.jpg"
 import dress18 from "../Assets/Images/women/dress18.jpg"
+import Header from "../Components/Header"
+//import Footer from "../Components/Footer"
+import { useContext, useEffect } from "react"
+import { Context } from "../Context"
 
 const Women = () => {
+    const { setCurrentPage } = useContext(Context)
     const data = [
         {name: 'Enchanted Garden Gown', price: '$100', newArrival: true, img: dress1},
         {name: 'Enchanted Garden Gown', price: '$100', newArrival: true, img: dress2},
@@ -58,8 +63,14 @@ const Women = () => {
         {name: 'Enchanted Garden Gown', price: '$100', img: dress18},
     ]
 
+    useEffect(() => {
+        setCurrentPage('women')
+    })
+
     return (
-        <div className="w-full h-full pt-40 overflow-y-scroll">
+        <div className="w-full h-full overflow-scroll-y pt-48 pb-24 relative">
+            <Header />
+
             <div className="w-[500px] p-3 mb-20 m-auto h-max bg-orange-100 text-red-500 text-center text-3xl font-semibold">
                 <p>Big Summer Sales</p>
                 <p>Up to 20% off all items</p>
@@ -67,6 +78,7 @@ const Women = () => {
             </div>
 
             <Section items={data}/>
+
         </div>
     )
 }
