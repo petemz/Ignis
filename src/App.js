@@ -1,10 +1,9 @@
 import Header from "./Components/Header"
-import Home from "./Components/Home";
+import Home from "./Pages/Home";
 
 function App() {
   return (
     <div className="App h-screen">
-      <Header />
 
       <Home />
     </div>

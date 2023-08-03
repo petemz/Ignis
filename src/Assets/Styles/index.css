@@ -19,3 +19,7 @@ code {
 .logo {
   font-family: 'Lumanosimo', cursive;
 }
+
+div {
+  transition: background-image 0.5s;
+}
