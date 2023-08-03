@@ -12,7 +12,7 @@ const Header = ({color}) => {
                 </button>
 
                 <div className="ml-[7vw] ">
-                    <p className="text-8xl font-extrabold mb-4 logo">IGNIS</p>
+                    <Link className="text-8xl font-extrabold mb-4 logo" to={"/"}>IGNIS</Link>
                     <ul className="flex">
                         <li className="mr-6">
                             <Link
