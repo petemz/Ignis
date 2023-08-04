@@ -2,7 +2,7 @@ import { Link } from "react-router-dom"
 
 const Header = ({color}) => {
     return (
-        <header style={{ color: color }} className="fixed top-0 w-full flex justify-between px-6 pt-4 font-medium">
+        <header style={{ color: color }} className="fixed z-50 top-0 w-full flex justify-between px-6 pt-4 font-medium">
             {/*Hamburger menu*/}
 
 
@@ -12,8 +12,8 @@ const Header = ({color}) => {
                 </button>
 
                 <div className="ml-[7vw] ">
-                    <Link className="text-8xl font-extrabold mb-4 logo" to={"/"}>IGNIS</Link>
-                    <ul className="flex">
+                    <Link className="text-8xl font-extrabold logo" to={"/"}>IGNIS</Link>
+                    <ul className="flex mt-3">
                         <li className="mr-6">
                             <Link
                                 className="flex pl-4 pr-1" to={`/women`}

@@ -1,4 +1,9 @@
+import { useContext, useEffect } from "react"
+import { Context } from "../Context"
+import Header from "../Components/Header"
+import Footer from "../Components/Footer"
 import Section from "../Components/Section"
+
 import dress1 from "../Assets/Images/women/dress1-e.jpg"
 import dress2 from "../Assets/Images/women/dress2.jpg"
 import dress3 from "../Assets/Images/women/dress3.jpg"
@@ -17,10 +22,7 @@ import dress15 from "../Assets/Images/women/dress15.jpg"
 import dress16 from "../Assets/Images/women/dress16.jpg"
 import dress17 from "../Assets/Images/women/dress17.jpg"
 import dress18 from "../Assets/Images/women/dress18.jpg"
-import Header from "../Components/Header"
-//import Footer from "../Components/Footer"
-import { useContext, useEffect } from "react"
-import { Context } from "../Context"
+
 
 const Women = () => {
     const { setCurrentPage } = useContext(Context)
@@ -68,17 +70,22 @@ const Women = () => {
     })
 
     return (
-        <div className="w-full h-full overflow-scroll-y pt-48 pb-24 relative">
+        <div className="w-full h-full pt-48 pb-24 relative">
             <Header />
 
-            <div className="w-[500px] p-3 mb-20 m-auto h-max bg-orange-100 text-red-500 text-center text-3xl font-semibold">
-                <p>Big Summer Sales</p>
-                <p>Up to 20% off all items</p>
-                <p className="text-sm mt-1 text-black font-normal">Sales end soon. Join now to enjoy!</p>
+            <div className="w-full max-w-[900px] p-3 mb-20 m-auto text-sm h-max bg-orange-100 text-center">
+                <p>Ignis Exclusive</p>
+                <p className=" text-red-500 text-3xl font-semibold">Big Summer Sales. Up to 20% off all items!</p>
+                <div className="flex justify-center items-center mt-1">
+                    <span className="mr-16"><a className=" underline" href="#">Explore the Collection</a></span>
+                    <span>Not a Member? <a className=" underline" href="#">Join now!</a></span>                    
+                </div>
+
             </div>
 
             <Section items={data}/>
 
+            <Footer />
         </div>
     )
 }
