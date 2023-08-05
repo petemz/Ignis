@@ -2,46 +2,26 @@ import { Link } from "react-router-dom"
 
 const Header = ({color}) => {
     return (
-        <header style={{ color: color }} className="fixed z-50 top-0 w-full flex justify-between px-6 pt-4 font-medium">
-            {/*Hamburger menu*/}
+        <header style={{ color: color }} className="fixed z-50 left-0 top-0 w-full grid grid-cols-3 px-16 pt-10">
+            <div className="text-base h-max">
+                <Link  to={'/women'} className="mr-6">Shop</Link>
 
+                <button className="mr-6">Collections</button>
 
-            <div className="flex items-start">
-                <button className="w-5 mt-1">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 448 512"><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg>
-                </button>
+                <button className="mr-6">Shoes</button>
 
-                <div className="ml-[7vw] ">
-                    <Link className="text-8xl font-extrabold logo" to={"/"}>IGNIS</Link>
-                    <ul className="flex mt-3">
-                        <li className="mr-6">
-                            <Link
-                                className="flex pl-4 pr-1" to={`/women`}
-                            >
-                                <span>WOMEN</span>
-                            </Link>
-                        </li>
-                        <li className="mr-6">
-                            <Link
-                                className="flex pl-4 pr-1" to={`/men`}
-                            >
-                                <span>MEN</span>
-                            </Link>
-                        </li>
-                        <li className="mr-6">
-                            <Link
-                                className="flex pl-4 pr-1" to={`/kids`}
-                            >
-                                <span>KIDS</span>
-                            </Link>
-                        </li>
-                    </ul>
-                </div>
+                <button className="">Search</button>
             </div>
-            
-            {/*Search Input */}
+            {/*Hamburger menu
 
-            <ul className="flex items-center h-max">
+            <button className="w-8 h-max p-1 ">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 448 512"><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg>
+            </button>
+            */}
+
+            <Link className="text-6xl text-center font-extrabold logo" to={"/"}>IGNIS</Link>
+
+            <ul className="flex justify-end items-center h-max">
                 <li className="">
                     <Link  to={'/sigin'}>
                         <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" height="1em" viewBox="0 0 448 512"><path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z"/></svg>

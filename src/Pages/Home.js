@@ -18,7 +18,7 @@ const  Home = () => {
 
         </div>,
         <div style={{ backgroundImage:  `url(${homeImg1})`, backgroundPosition: 'center', backgroundSize: 'cover', transition: 'background-image 0.5s' }} className="w-full h-full text-xl font-semibold flex flex-col justify-end pb-[30vh]">
-            <Header color={'white'}/>
+            <Header />
             <div className="pl-[18vw] text-white">
                 <h1 className="text-5xl mb-3">Summer's Hottest Essentials</h1>
                 <p>Look put together & sleek at the same time</p>                
@@ -53,10 +53,6 @@ const  Home = () => {
         return () => {
             clearInterval(intervalId)
         }
-    })
-
-    useEffect(() => {
-        setCurrentPage('home')
     })
 
     return (

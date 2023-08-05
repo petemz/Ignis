@@ -1,7 +1,10 @@
-import { useState } from "react"
+import { useContext, useEffect } from "react"
+import { Context } from "../Context"
 import angleDown from "../Assets/Images/down.png"
 
 const Section = ({ items }) => {
+    const { cart, setCart} = useContext(Context)
+
     const size = (index) => {
         switch (index) {
             default: return 'auto'
@@ -22,8 +25,12 @@ const Section = ({ items }) => {
         'colour', 'size', 'price', 'material', 'others'
     ]
 
+    const AddToCart = (item) => {
+        setCart(cart => [...cart, item])
+    }
+
     return ( 
-        <div className=" px-[5%]">
+        <div className="">
             <div className="mb-10 flex">
                 {filters.map(filter => {
                     return (
@@ -41,7 +48,10 @@ const Section = ({ items }) => {
                         <div style={{ gridArea: size(index) }} className={`${index % 9 === 4 ? 'h-full max-w-[640px]' : ''}`} key={index}>
                             <div className="h-[calc(100%-90px)] relative">
                                 <img className="w-full h-full object-cover object-top" src={item.img} alt="" />
-                                <button className="h-8 w-8 hover:scale-110 absolute bottom-6 left-1/2 right-1/2 bg-white bg-opacity-60 hover:bg-opacity-100 flex justify-center items-center rounded-full hover:text-red-500">
+                                <button
+                                    className="h-8 w-8 hover:scale-110 absolute bottom-6 left-1/2 right-1/2 bg-white bg-opacity-60 hover:bg-opacity-100 flex justify-center items-center rounded-full hover:text-red-500"
+                                    onClick={() => AddToCart(item)}
+                                >
                                     <svg className="" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg>
                                 </button>
                             </div>
