@@ -3,7 +3,7 @@ import { Context } from "../Context"
 import angleDown from "../Assets/Images/down.png"
 
 const Section = ({ items }) => {
-    const { cart, setCart} = useContext(Context)
+    const { cart, setCart, AddToCart} = useContext(Context)
 
     const size = (index) => {
         switch (index) {
@@ -25,9 +25,6 @@ const Section = ({ items }) => {
         'colour', 'size', 'price', 'material', 'others'
     ]
 
-    const AddToCart = (item) => {
-        setCart(cart => [...cart, item])
-    }
 
     return ( 
         <div className="">
@@ -68,7 +65,7 @@ const Section = ({ items }) => {
                                     </div>                                
                                 </div>
 
-                                <p className="text-xl mt-1">{item.name}</p>
+                                <p className="text-xl font-medium mt-1">{item.name}</p>
                                 <p>{item.price}</p>
                                 <span className="text-xs text-red-400">{item.newArrival && 'New Arrival'}</span>
 

@@ -14,7 +14,7 @@ const wishlist = () => {
                         <div>
                             <div className="flex text-center border-b border-black">
                                 <Link className="w-60 p-1 block border border-black border-b-0 border-r-0" to={"/cart"}>CART</Link>
-                                <Link className="w-60 p-1 block border border-black border-b-0" to={"/wishlist"}>WISHLIST</Link>
+                                <Link className="w-60 p-1 block bg-black text-white border border-black border-b-0" to={"/wishlist"}>WISHLIST</Link>
                             </div>
                         </div>
                     </div>

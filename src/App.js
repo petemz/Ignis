@@ -20,7 +20,7 @@ const App = () => {
   ]
 
   return (
-    <div className="App h-screen">
+    <div className="App h-screen bg-[#faf9f8]">
       <Routes>
         {routes.map((route, index) => {
           return (
