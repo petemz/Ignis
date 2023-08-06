@@ -1,9 +1,9 @@
-import { useContext, useEffect } from "react"
+import { useContext } from "react"
 import { Context } from "../Context"
 import angleDown from "../Assets/Images/down.png"
 
 const Section = ({ items }) => {
-    const { cart, setCart, AddToCart} = useContext(Context)
+    const { cart, setCart, addToCart} = useContext(Context)
 
     const size = (index) => {
         switch (index) {
@@ -31,7 +31,7 @@ const Section = ({ items }) => {
             <div className="mb-10 flex">
                 {filters.map(filter => {
                     return (
-                        <button className=" flex items-center mr-2 pl-3 pr-2 py-1 border-2 border-black" >
+                        <button className=" flex items-center mr-2 pl-3 pr-2 py-1 border-2 border-black" key={filter}>
                             <span className="">{filter}</span>
                             <img className="w-5 ml-5" src={angleDown} alt="" />
                         </button>
@@ -47,7 +47,7 @@ const Section = ({ items }) => {
                                 <img className="w-full h-full object-cover object-top" src={item.img} alt="" />
                                 <button
                                     className="h-8 w-8 hover:scale-110 absolute bottom-6 left-1/2 right-1/2 bg-white bg-opacity-60 hover:bg-opacity-100 flex justify-center items-center rounded-full hover:text-red-500"
-                                    onClick={() => AddToCart(item)}
+                                    onClick={() => addToCart(item)}
                                 >
                                     <svg className="" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg>
                                 </button>

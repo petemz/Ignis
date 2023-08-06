@@ -35,7 +35,7 @@ const Women = () => {
                 <div className="flex">
                     {categories.map(category => {
                         return (
-                            <div className=" mr-8 text-xl text-center w-max">
+                            <div className=" mr-8 text-xl text-center w-max" key={category.name}>
                                 <img className="mb-1 rounded-full" src={category.img} alt="" />                 
                                 <p>{category.name}</p>               
                             </div>
