@@ -1,14 +1,14 @@
-import { useContext, useState } from "react"
+import { useContext } from "react"
 import { Context } from "../Context"
 import { Link } from "react-router-dom"
 
 const Header = ({color}) => {
     const { cart } = useContext(Context)
-    const [bg, setBg] = useState()
+    //const [bg, setBg] = useState()
 
     return (
-        <header style={{ color: color }} className="fixed z-50 left-0 top-0 hover:bg-[#faf9f8] hover:bg-opacity-90 w-full grid grid-cols-3 px-16 pb-5 pt-10">
-            <div className="text-base h-max">
+        <header style={{ color: color }} className="fixed z-50 left-0 top-0 hover:bg-[#faf9f8] hover:bg-opacity-[95%] w-full grid grid-cols-3 px-16 pb-5 pt-10">
+            <div className="text-base font-medium h-max">
                 <Link  to={'/women'} className="mr-6">Shop</Link>
 
                 <button className="mr-6">Collections</button>
