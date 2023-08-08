@@ -5,7 +5,7 @@ import Header from "../Components/Header"
 import Footer from "../Components/Footer"
 
 const Cart = () => {
-    const { cart, setCart, handleDelete } = useContext(Context)
+    const { cart, setCart, handleDelete, isFav, handleAddFav, handleRemoveFav } = useContext(Context)
 
     const handleIncrement = (item) => {
         const newCart = cart.map(prod => {
@@ -35,6 +35,11 @@ const Cart = () => {
 
         } else handleDelete(item)
     }
+    
+    const handleFav = (item) => {
+        console.log(item)
+        !isFav(item.id) ? handleAddFav(item) : handleRemoveFav(item)
+    }
 
     return (
         <div className="pt-36 px-[5%] h-full overflow-y-scroll">
@@ -46,8 +51,8 @@ const Cart = () => {
 
             <div className="">
                 <div className="flex text-center border-b border-black">
-                    <Link className="w-60 p-1 block bg-black text-white border border-black border-b-0 border-r-0" to={"/cart"}>CART</Link>
-                    <Link className="w-60 p-1 block  border border-black border-b-0" to={"/wishlist"}>WISHLIST</Link>
+                    <Link className="w-60 md:w-1/2 p-1 block bg-black text-white border border-black border-b-0 border-r-0" to={"/cart"}>CART</Link>
+                    <Link className="w-60 md:w-1/2 p-1 block border border-black border-b-0" to={"/wishlist"}>WISHLIST</Link>
                 </div>
 
                 <div className="grid grid-cols-[1fr_350px] w-full gap-x-10 justify-center py-10">
@@ -73,8 +78,8 @@ const Cart = () => {
                                         </div>
 
                                         <div className="flex">
-                                            <button className="w-8 h-8 mr-8 flex justify-center items-center border border-black px-4">
-                                                <svg className="w-5 h-5 text-white hover:text-red-600" fill="currentColor" strokeWidth={10} stroke="black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M47.6 300.4L228.3 469.1c7.5 7 17.4 10.9 27.7 10.9s20.2-3.9 27.7-10.9L464.4 300.4c30.4-28.3 47.6-68 47.6-109.5v-5.8c0-69.9-50.5-129.5-119.4-141C347 36.5 300.6 51.4 268 84L256 96 244 84c-32.6-32.6-79-47.5-124.6-39.9C50.5 55.6 0 115.2 0 185.1v5.8c0 41.5 17.2 81.2 47.6 109.5z"/></svg>
+                                            <button onClick={() => handleFav(item)} className={`w-8 h-8 mr-8 flex justify-center items-center border border-black px-4 ${isFav(item.id) ? 'text-red-500' : 'text-white hover:text-red-500'}`}>
+                                                <svg className="w-5 h-5" fill="currentColor" strokeWidth={10} stroke="black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M47.6 300.4L228.3 469.1c7.5 7 17.4 10.9 27.7 10.9s20.2-3.9 27.7-10.9L464.4 300.4c30.4-28.3 47.6-68 47.6-109.5v-5.8c0-69.9-50.5-129.5-119.4-141C347 36.5 300.6 51.4 268 84L256 96 244 84c-32.6-32.6-79-47.5-124.6-39.9C50.5 55.6 0 115.2 0 185.1v5.8c0 41.5 17.2 81.2 47.6 109.5z"/></svg>
                                             </button>
 
                                             <div className="flex">

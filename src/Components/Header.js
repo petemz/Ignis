@@ -8,8 +8,8 @@ const Header = ({color}) => {
 
     return (
         <header style={{ color: color }} className="fixed z-50 left-0 top-0 hover:bg-[#faf9f8] hover:bg-opacity-[95%] w-full grid grid-cols-3 px-16 pb-5 pt-10">
-            <div className="text-base font-medium h-max">
-                <Link  to={'/women'} className="mr-6">Shop</Link>
+            <div className="lg:hidden text-base font-medium h-max">
+                <Link to={'/women'} className="mr-6">Shop</Link>
 
                 <button className="mr-6">Collections</button>
 
@@ -23,6 +23,10 @@ const Header = ({color}) => {
                 <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 448 512"><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg>
             </button>
             */}
+
+            <button className="-lg:hidden w-max h-max">
+                <img className="w" src={require('../Assets/hamburger-menu.png')} alt="" />
+            </button>
 
             <Link className="text-6xl text-center font-extrabold logo" to={"/"}>IGNIS</Link>
 

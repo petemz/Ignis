@@ -1,5 +1,3 @@
-import { nanoid } from 'nanoid'
-
 const womenData = [
     {name: 'Elegant Essence Gown', price: 100, newArrival: true, img: require('./Images/women/dress1.jpg'), id: 'dr-001'},
     {name: 'Enchanted Garden Gown', price: 100, newArrival: true, img: require("./Images/women/dress2.jpg"), id: 'dr-002'},

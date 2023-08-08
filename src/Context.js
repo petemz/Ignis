@@ -28,12 +28,11 @@ const ContextProvider = (props) => {
 
 
     const isFav = (id) => {
-        console.log(id)
-        console.log(favs.findIndex(prod => prod.id === id) > -1)
         return favs.findIndex(prod => prod.id === id) > -1
     }
 
     const handleAddFav = (item) => {
+        console.log('yupp')
         const index = cart.findIndex(prod => prod.id === item.id)
         index < 0 && setFavs(prevCart => [...prevCart, item])
     }
@@ -41,8 +40,6 @@ const ContextProvider = (props) => {
         const index = favs.findIndex(prod => prod.id === item.id)
         index > -1 && setFavs(current => current.filter(prod => prod.id !== item.id))
     }
-
-    console.log(favs)
 
     // Save cart data to local storage whenever the cart changes
     useEffect(() => {
@@ -54,8 +51,8 @@ const ContextProvider = (props) => {
         <Context.Provider value={{ cart, setCart, addToCart, handleDelete, favs, isFav, handleAddFav, handleRemoveFav }}>
             {props.children}
         </Context.Provider>
-    );
-};
+    )
+}
 
-export { ContextProvider, Context };
+export { ContextProvider, Context }
 
