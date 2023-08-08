@@ -65,7 +65,7 @@ const Cart = () => {
                                             <p className="text-lg">${item.price}</p>
 
                                             <div className="mt-3 text-sm grid grid-cols-2 gap-x-[40%] ">
-                                                <p>ItemId.: </p>
+                                                <p>ItemId.: {item.id}</p>
                                                 <p>Color: {item.color}</p>
                                                 <p>Size: </p>
                                                 <p>Total: {item.price * item.amount}</p>

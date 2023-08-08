@@ -18,6 +18,10 @@ const Section = ({ items }) => {
                 return ('11 / 3 / 13 / 5')
             case 40:
                 return ('14 / 1 / 16 / 3')
+            case 49: 
+                return ('17 / 3 / 19 / 5')
+            case 58: 
+                return ('20 / 1 / 22 / 3') 
         }
     }
 
@@ -28,7 +32,6 @@ const Section = ({ items }) => {
     const handleFav = (item) => {
         !isFav(item.id) ? handleAddFav(item) : handleRemoveFav(item)
     }
-
 
     return ( 
         <div className="">

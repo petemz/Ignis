@@ -5,7 +5,7 @@ import Header from "../Components/Header"
 import Footer from "../Components/Footer"
 
 const Wishlist = () => {
-    const { cart, handleRemoveFav } = useContext(Context)
+    const { favs, handleRemoveFav } = useContext(Context)
     return (
 
     <div className="pt-36 px-[5%] h-full overflow-y-scroll">
@@ -23,7 +23,7 @@ const Wishlist = () => {
 
                 <div className=" w-full gap-x-10 justify-center py-10">
                     <ul className="flex flex-wrap justify-center w-full">
-                        {cart.map(item => {
+                        {favs.map(item => {
                             return (
                                 <li className="mb-5 mx-1">
                                     <div className="max-w-64 h-96 relative">
