@@ -65,4 +65,85 @@ const womenData = [
     {name: 'Enchanted Garden Gown', price: 100, img: require("./Images/Categories/Shoes/shoe5.jpg"), id: 'jw-015'},
 ]
 
-export { womenData }
+const dressesData = [
+    {name: 'Elegant Essence Gown', price: 100, newArrival: true, img: require('./Images/Categories/Dresses/dress1.jpg'), id: 'dr-001'},
+    {name: 'Enchanted Garden Gown', price: 100, newArrival: true, img: require("./Images/Categories/Dresses/dress2.jpg"), id: 'dr-002'},
+    {name: 'Lavender Mist Dress', price: 100, img: require("./Images/Categories/Dresses/dress3.jpg"), id: 'dr-003'},
+    {name: 'Golden Glimmer Gown', price: 100, newArrival: true, img: require("./Images/Categories/Dresses/dress4.jpg"), id: 'dr-004'},
+    {name: 'Radiant Ruby Dress', price: 100, newArrival: true, img: require("./Images/Categories/Dresses/dress5.jpg"), id: 'dr-005'},
+    {name: 'Azure Skies Midi Dress', price: 100, newArrival: true, img: require("./Images/Categories/Dresses/dress6.jpg"), id: 'dr-006'},
+    {name: 'Pearl Petals Dress', price: 100, img: require("./Images/Categories/Dresses/dress7.jpg"), id:'dr-007'},
+    {name: 'Starry Night Gown', price: 100, img: require("./Images/Categories/Dresses/dress8.jpg"), id: 'dr-008'},
+    {name: 'Blossom Dream Dress', price: 100, newArrival: true, img: require("./Images/Categories/Dresses/dress9.jpg"), id: 'dr-009'},
+    {name: 'Serene Serendipity Dress', price: 100, newArrival: true, img: require("./Images/Categories/Dresses/dress10.jpg"), id: 'dr-010'},
+    {name: 'Vintage Rose Frock', price: 100, newArrival: true, img: require("./Images/Categories/Dresses/dress11.jpg"), id: 'dr-011'},
+    {name: 'Celestial Sparkle Dress', price: 100, img: require("./Images/Categories/Dresses/dress12.jpg"), id: 'dr-012'},
+    {name: 'Dazzling Daffodil Gown', price: 100, newArrival: true, img: require("./Images/Categories/Dresses/dress13.jpg"), id: 'dr-013'},
+    {name: 'Whimsical Willow Dress', price: 100, img: require("./Images/Categories/Dresses/dress14.jpg"), id: 'dr-014'},
+    {name: 'Coral Cascade Gown', price: 100, newArrival: true, img: require("./Images/Categories/Dresses/dress15.jpg"), id: 'dr-015'},
+    {name: 'Ocean Breeze Maxi Dress', price: 100, img: require("./Images/Categories/Dresses/dress16.jpg"), id: 'dr-016'},
+]
+
+const accessoriesData = [
+    {name: 'Enchanted Garden Gown', price: 100, img: require("./Images/Categories/Accessories/accessories1.jpg"), id: 'ac-001'},
+    {name: 'Enchanted Garden Gown', price: 100, newArrival: true, img: require("./Images/Categories/Accessories/accessories2.jpg"), id: 'ac-002'},
+    //{name: 'Enchanted Garden Gown', price: 100, img: require("./Images/Categories/Accessories/accessories3.jpg"), id: 'ac-003'},
+    {name: 'Enchanted Garden Gown', price: 100, img: require("./Images/Categories/Accessories/accessories4.jpg"), id: 'ac-004'},
+    {name: 'Enchanted Garden Gown', price: 100, newArrival: true, img: require("./Images/Categories/Accessories/accessories5.jpg"), id: 'ac-005'},
+    {name: 'Enchanted Garden Gown', price: 100, img: require("./Images/Categories/Accessories/accessories6.jpg"), id: 'ac-006'},
+    {name: 'Enchanted Garden Gown', price: 100, img: require("./Images/Categories/Accessories/accessories7.jpg"), id: 'ac-007'},
+    {name: 'City Lights Tunic', price: 100, newArrival: true, img: require("./Images/Categories/Tops/shirt6.jpg"), id: 'bl-001'},
+    {name: 'Enchanted Garden Gown', price: 100, img: require("./Images/Categories/Accessories/accessories8.jpg"), id: 'ac-008'},
+    {name: 'Enchanted Garden Gown', price: 100, img: require("./Images/Categories/Accessories/jewelry1.jpg"), id: 'jw-001'},
+    {name: 'Enchanted Garden Gown', price: 100, img: require("./Images/Categories/Accessories/jewelry2.jpg"), id: 'jw-002'},
+    {name: 'Enchanted Garden Gown', price: 100, img: require("./Images/Categories/Accessories/jewelry3.jpg"), id: 'jw-003'},
+    {name: 'Enchanted Garden Gown', price: 100, img: require("./Images/Categories/Accessories/jewelry4.jpg"), id: 'jw-004'},
+    //{name: 'Enchanted Garden Gown', price: 100, img: require("./Images/Categories/Accessories/jewelry5.jpg"), id: 'jw-005'},
+    {name: 'Enchanted Garden Gown', price: 100, img: require("./Images/Categories/Accessories/jewelry6.jpg"), id: 'jw-006'},
+    {name: 'Enchanted Garden Gown', price: 100, img: require("./Images/Categories/Accessories/jewelry7.jpg"), id: 'jw-007'},
+    {name: 'Enchanted Garden Gown', price: 100, img: require("./Images/Categories/Accessories/jewelry8.jpg"), id: 'jw-008'},
+    {name: 'Enchanted Garden Gown', price: 100, img: require("./Images/Categories/Accessories/jewelry9.jpg"), id: 'jw-009'},
+    {name: 'Enchanted Garden Gown', price: 100, img: require("./Images/Categories/Accessories/jewelry10.jpg"), id: 'jw-010'},
+]
+
+const shirtsData = [
+    {name: 'Mountain Explorer Shirt', price: 100, img: require("./Images/Categories/Tops/shirt2.jpg"), id: 'bl-004'},
+    {name: 'Forest Wanderer Blouse', price: 100, img: require("./Images/Categories/Tops/shirt3.jpg"), id: 'bl-005'},
+    {name: 'Starlight Skies Shirt', price: 100, newArrival: true, img: require("./Images/Categories/Tops/shirt4.jpg"), id: 'bl-002'},
+    //{name: 'Tropical Paradise Tunic', price: 100, newArrival: true, img: require("./Images/Categories/Tops/shirt5.jpg"), id: nanoid()},
+    {name: 'Wild Safari Shirt', price: 100, img: require("./Images/Categories/Tops/shirt7.jpg"), id: 'bl-006'},
+    {name: 'Midnight Magic Blouse', price: 100, img: require("./Images/Categories/Tops/shirt8.jpg"), id: 'bl-007'},
+    {name: 'Midnight Magic Blouse', price: 100, img: require("./Images/Categories/Tops/shirt9.jpg"), id: 'bl-008'},
+]
+
+export const skirtsData = [
+    {name: 'Enchanted Garden Gown', price: 100, img: require("./Images/Categories/Skirts/skirt3.jpg"), id: 'sk-001'},
+    {name: 'Enchanted Garden Gown', price: 100, newArrival: true, img: require("./Images/Categories/Skirts/skirt1.jpg"), id: 'sk-002'},
+    {name: 'Enchanted Garden Gown', price: 100, newArrival: true, img: require("./Images/Categories/Skirts/skirt2.jpg"), id: 'sk-003'},
+    {name: 'Enchanted Garden Gown', price: 100, img: require("./Images/Categories/Skirts/skirt4.jpg"), id: 'sk-004'},
+    {name: 'Enchanted Garden Gown', price: 100, img: require("./Images/Categories/Skirts/skirt5.jpg"), id: 'sk-005'},
+    {name: 'Enchanted Garden Gown', price: 100, img: require("./Images/Categories/Skirts/skirt6.jpg"), id: 'sk-006'},
+    {name: 'Enchanted Garden Gown', price: 100, img: require("./Images/Categories/Skirts/skirt7.jpg"), id: 'sk-007'},
+    {name: 'Enchanted Garden Gown', price: 100, img: require("./Images/Categories/Skirts/skirt8.jpg"), id: 'sk-008'},
+    {name: 'Enchanted Garden Gown', price: 100, img: require("./Images/Categories/Skirts/skirt9.jpg"), id: 'sk-009'},
+    {name: 'Enchanted Garden Gown', price: 100, img: require("./Images/Categories/Skirts/skirt10.jpg"), id: 'sk-010'},
+]
+
+const pantsData = [
+    {name: 'Smark Ankle Pants', price: 100, img: require("./Images/Categories/Pants/trousers1.jpg"), id: 'tr-001'},
+    {name: 'Enchanted Garden Gown', price: 100, img: require("./Images/Categories/Pants/trousers2.jpg"), id: 'tr-002'},
+    {name: 'Side Slitted Denim', price: 100, img: require("./Images/Categories/Pants/trousers3.jpg"), id: 'tr-003'},
+    {name: 'Pleated Straight Pants', price: 100, img: require("./Images/Categories/Pants/trousers4.jpg"), id: 'tr-004'},
+    {name: 'Enchanted Garden Gown', price: 100, img: require("./Images/Categories/Pants/trousers5.jpg"), id: 'tr-005'},
+    {name: 'Peach Jogger Pants', price: 100, img: require("./Images/Categories/Pants/trousers6.jpg"), id: 'tr-006'},
+]
+
+const shoesData = [
+    {name: 'Enchanted Garden Gown', price: 100, img: require("./Images/Categories/Shoes/shoe1.jpg"), id: 'jw-011'},
+    {name: 'Enchanted Garden Gown', price: 100, img: require("./Images/Categories/Shoes/shoe2.jpg"), id: 'jw-012'},
+    {name: 'Enchanted Garden Gown', price: 100, img: require("./Images/Categories/Shoes/shoe3.jpg"), id: 'jw-013'},
+    {name: 'Enchanted Garden Gown', price: 100, img: require("./Images/Categories/Shoes/shoe4.jpg"), id: 'jw-014'},
+    {name: 'Enchanted Garden Gown', price: 100, img: require("./Images/Categories/Shoes/shoe5.jpg"), id: 'jw-015'},
+]
+
+export { womenData, dressesData, accessoriesData, shirtsData, pantsData, shoesData }

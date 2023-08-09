@@ -38,7 +38,7 @@ const Section = ({ items }) => {
             <div className="mb-10 flex">
                 {filters.map(filter => {
                     return (
-                        <button className=" flex items-center mr-2 pl-3 pr-2 py-1 border-2 border-black" key={filter}>
+                        <button className=" flex flex-w items-center mr-2 pl-3 pr-2 py-1 border-2 border-black" key={filter}>
                             <span className="">{filter}</span>
                             <img className="w-5 ml-5" src={angleDown} alt="" />
                         </button>

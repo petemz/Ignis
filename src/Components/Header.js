@@ -1,13 +1,14 @@
-import { useContext } from "react"
+import { useContext, useState } from "react"
 import { Context } from "../Context"
 import { Link } from "react-router-dom"
 
 const Header = ({color}) => {
     const { cart } = useContext(Context)
     //const [bg, setBg] = useState()
+    const [isNav, setIsNav] = useState(false)
 
     return (
-        <header style={{ color: color }} className="fixed z-50 left-0 top-0 hover:bg-[#faf9f8] hover:bg-opacity-[95%] w-full grid grid-cols-3 px-16 pb-5 pt-10">
+        <header style={{ color: color }} className="fixed z-50 left-0 top-0 hover:bg-[#faf9f8] hover:bg-opacity-[95%] w-full grid grid-cols-3 px-6 pb-5 pt-6">
             <div className="lg:hidden text-base font-medium h-max">
                 <Link to={'/women'} className="mr-6">Shop</Link>
 
@@ -17,16 +18,38 @@ const Header = ({color}) => {
 
                 <button className="">Search</button>
             </div>
-            {/*Hamburger menu
 
-            <button className="w-8 h-max p-1 ">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 448 512"><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg>
+            {/*Hamburger menu*/}
+            <button 
+                onClick={() => setIsNav(true)} 
+                className="-lg:hidden w-max h-max"
+            >
+                <div class="w-8 h-max ">
+                    <div class="h-[5px] mb-1 rounded-md bg-black"></div>
+                    <div class="h-[5px] ml-auto mb-1 w-2/3 rounded-md bg-black"></div>
+                    <div class="h-[5px] mb-1 rounded-md bg-black"></div>
+                    <div class="h-[5px] ml-auto w-2/3 rounded-md bg-black"></div>
+                </div>
             </button>
-            */}
 
-            <button className="-lg:hidden w-max h-max">
-                <img className="w" src={require('../Assets/hamburger-menu.png')} alt="" />
-            </button>
+                            
+            {isNav && 
+                <div className="absolute w-80 -lg:hidden border-r border-black bg-[#faf9f8]">
+                    <div className="p-5 pl-[15%] flex flex-col justify-center h-screen text-5xl font-semibold">
+                        <Link to={'/women'} className="my-10 transform transiti hover:italic block w-max">Shop</Link>
+
+                        <button className="my-10 block hover:italic w-max">Collections</button>
+
+                        <button className="my-10 block hover:italic w-max">Shoes</button>
+
+                        <button className="my-10 block hover:italic w-max">Search</button> 
+
+                        <button onClick={() => setIsNav(false)}>
+                            <svg className="absolute top-7 right-8" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 384 512"><path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/></svg>                       
+                        </button>
+                    </div>
+                </div>
+            } 
 
             <Link className="text-6xl text-center font-extrabold logo" to={"/"}>IGNIS</Link>
 

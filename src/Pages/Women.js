@@ -1,5 +1,6 @@
 //import { useContext, useEffect } from "react"
 //import { Context } from "../Context"
+import { Link } from "react-router-dom"
 import Header from "../Components/Header"
 import Footer from "../Components/Footer"
 import Section from "../Components/Section"
@@ -32,13 +33,13 @@ const Women = () => {
 
             <div className="mb-20">
                 <h1 className="text-5xl mb-6">All Cloths, Shoes,<br /> Bags, and Accessories.</h1>
-                <div className="flex">
+                <div className="flex flex-wrap">
                     {categories.map(category => {
                         return (
-                            <div className=" mr-8 text-xl text-center w-max" key={category.name}>
+                            <Link to={category.link} className=" mr-8 text-xl text-center w-max" key={category.name}>
                                 <img className="mb-1 rounded-full" src={category.img} alt="" />                 
                                 <p>{category.name}</p>               
-                            </div>
+                            </Link>
                         )}
                     )}
                 </div>
