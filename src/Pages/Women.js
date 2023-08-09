@@ -9,12 +9,12 @@ const Women = () => {
     //const {  } = useContext(Context)
 
     const categories = [
-        {name: "Dresses", link: "/category/dresses", img: require("../Assets/Images/Categories/dresses.jpg")},
-        {name: "Shirts", link: "/category/shirts", img: require("../Assets/Images/Categories/shirts.jpg")},
-        {name: "Pants", link: "/category/pants", img: require("../Assets/Images/Categories/pants.jpg")},
-        {name: "Skirts", link: "/category/skirts", img: require("../Assets/Images/Categories/skirts.jpg")},
-        {name: "Shoes", link: "/category/shoes", img: require("../Assets/Images/Categories/shoes.jpg")},
-        {name: "Accessories", link: "/category/accessories", img: require("../Assets/Images/Categories/accessories.jpg")},
+        {name: "Dresses", link: "/category/dresses", img: require("../Assets/Images/category-icons/dresses.jpg")},
+        {name: "Shirts", link: "/category/shirts", img: require("../Assets/Images/category-icons/shirts.jpg")},
+        {name: "Pants", link: "/category/pants", img: require("../Assets/Images/category-icons/pants.jpg")},
+        {name: "Skirts", link: "/category/skirts", img: require("../Assets/Images/category-icons/skirts.jpg")},
+        {name: "Shoes", link: "/category/shoes", img: require("../Assets/Images/category-icons/shoes.jpg")},
+        {name: "Accessories", link: "/category/accessories", img: require("../Assets/Images/category-icons/accessories.jpg")},
     ]
 
     return (
