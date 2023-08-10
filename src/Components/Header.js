@@ -10,7 +10,7 @@ const Header = ({color}) => {
     return (
         <header style={{ color: color }} className="fixed z-50 left-0 top-0 hover:bg-[#faf9f8] hover:bg-opacity-[95%] w-full grid grid-cols-3 px-6 pb-5 pt-6">
             <div className="lg:hidden text-base font-medium h-max">
-                <Link to={'/women'} className="mr-6">Shop</Link>
+                <Link to={'/all-products'} className="mr-6">Shop</Link>
 
                 <button className="mr-6">Collections</button>
 
@@ -36,7 +36,7 @@ const Header = ({color}) => {
             {isNav && 
                 <div className="absolute w-80 -lg:hidden border-r border-black bg-[#faf9f8]">
                     <div className="p-5 pl-[15%] flex flex-col justify-center h-screen text-5xl font-semibold">
-                        <Link to={'/women'} className="my-10 transform transiti hover:italic block w-max">Shop</Link>
+                        <Link to={'/all-products'} className="my-10 transform transiti hover:italic block w-max">Shop</Link>
 
                         <button className="my-10 block hover:italic w-max">Collections</button>
 

@@ -2,11 +2,11 @@
 import { Routes, Route } from "react-router-dom"
 //import { Context } from "./Context"
 import Home from "./Pages/Home"
-import Women from "./Pages/Women"
+import Women from "./Pages/AllProducts"
 import Wishlist from "./Pages/Wishlist"
 import Cart from "./Pages/Cart"
 import SignIn from "./Pages/SignIn"
-import { dressesData, accessoriesData, shirtsData, skirtsData, pantsData, shoesData} from "./Assets/data"
+import { dressesData, accessoriesData, shirtsData, skirtsData, pantsData, shoesData, jacketsData, sportswearsData} from "./Assets/data"
 import Section from "./Components/Section"
 //import Footer from "./Components/Footer"
 
@@ -15,7 +15,7 @@ const App = () => {
 
   const routes = [
     { component: <Home />, path: '/' },
-    { component: <Women />, path: '/women'},
+    { component: <Women />, path: '/all-products'},
     { component: <Wishlist />, path: '/wishlist' },
     { component: <Cart />, path: '/cart' },
     { component: <SignIn />, path: '/sigin' },
@@ -25,6 +25,8 @@ const App = () => {
     { component: <Section items={skirtsData} />, path: 'category/skirts'},
     { component: <Section items={pantsData} />, path: 'category/pants'},
     { component: <Section items={shoesData} />, path: 'category/shoes'},
+    { component: <Section items={sportswearsData} />, path: 'category/sportswears'},
+    { component: <Section items={jacketsData} />, path: 'category/jackets'},
   ]
 
   return (

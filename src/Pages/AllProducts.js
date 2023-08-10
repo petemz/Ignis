@@ -4,7 +4,7 @@ import { Link } from "react-router-dom"
 import Header from "../Components/Header"
 import Footer from "../Components/Footer"
 import Section from "../Components/Section"
-import { womenData } from "../Assets/data"
+import { allData } from "../Assets/data"
 
 const Women = () => {
     //const {  } = useContext(Context)
@@ -16,6 +16,8 @@ const Women = () => {
         {name: "Skirts", link: "/category/skirts", img: require("../Assets/Images/category-icons/skirts.jpg")},
         {name: "Shoes", link: "/category/shoes", img: require("../Assets/Images/category-icons/shoes.jpg")},
         {name: "Accessories", link: "/category/accessories", img: require("../Assets/Images/category-icons/accessories.jpg")},
+        {name: "Sportswears", link: "/category/sportswears", img: require("../Assets/Images/category-icons/sportswears.jpg")},
+        {name: "Jackets", link: "/category/jackets", img: require("../Assets/Images/category-icons/jackets.jpg")},
     ]
 
     return (
@@ -36,7 +38,7 @@ const Women = () => {
                 <div className="flex flex-wrap">
                     {categories.map(category => {
                         return (
-                            <Link to={category.link} className=" mr-8 text-xl text-center w-max" key={category.name}>
+                            <Link to={category.link} className="mb-10 mr-8 text-xl text-center w-max" key={category.name}>
                                 <img className="mb-1 rounded-full" src={category.img} alt="" />                 
                                 <p>{category.name}</p>               
                             </Link>
@@ -45,7 +47,7 @@ const Women = () => {
                 </div>
             </div>
 
-            <Section items={womenData}/>
+            <Section items={allData}/>
 
             <Footer />
         </div>

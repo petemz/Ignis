@@ -1,4 +1,4 @@
-const womenData = [
+/*const womenData = [
     {name: 'Elegant Essence Gown', price: 100, newArrival: true, img: require('./Images/Categories/Dresses/dress1.jpg'), id: 'dr-001'},
     {name: 'Enchanted Garden Gown', price: 100, newArrival: true, img: require("./Images/Categories/Dresses/dress2.jpg"), id: 'dr-002'},
     {name: 'Lavender Mist Dress', price: 100, img: require("./Images/Categories/Dresses/dress3.jpg"), id: 'dr-003'},
@@ -63,9 +63,9 @@ const womenData = [
     {name: 'Enchanted Garden Gown', price: 100, img: require("./Images/Categories/Shoes/shoe3.jpg"), id: 'jw-013'},
     {name: 'Enchanted Garden Gown', price: 100, img: require("./Images/Categories/Shoes/shoe4.jpg"), id: 'jw-014'},
     {name: 'Enchanted Garden Gown', price: 100, img: require("./Images/Categories/Shoes/shoe5.jpg"), id: 'jw-015'},
-]
+]*/
 
-const dressesData = [
+export const dressesData = [
     {name: 'Elegant Essence Gown', price: 100, newArrival: true, img: require('./Images/Categories/Dresses/dress1.jpg'), id: 'dr-001'},
     {name: 'Enchanted Garden Gown', price: 100, newArrival: true, img: require("./Images/Categories/Dresses/dress2.jpg"), id: 'dr-002'},
     {name: 'Lavender Mist Dress', price: 100, img: require("./Images/Categories/Dresses/dress3.jpg"), id: 'dr-003'},
@@ -84,40 +84,60 @@ const dressesData = [
     {name: 'Ocean Breeze Maxi Dress', price: 100, img: require("./Images/Categories/Dresses/dress16.jpg"), id: 'dr-016'},
 ]
 
-const accessoriesData = [
+export const accessoriesData = [
     {name: 'Enchanted Garden Gown', price: 100, img: require("./Images/Categories/Accessories/accessories1.jpg"), id: 'ac-001'},
     {name: 'Enchanted Garden Gown', price: 100, newArrival: true, img: require("./Images/Categories/Accessories/accessories2.jpg"), id: 'ac-002'},
-    //{name: 'Enchanted Garden Gown', price: 100, img: require("./Images/Categories/Accessories/accessories3.jpg"), id: 'ac-003'},
+    {name: 'Enchanted Garden Gown', price: 100, img: require("./Images/Categories/Accessories/accessories3.jpg"), id: 'ac-003'},
     {name: 'Enchanted Garden Gown', price: 100, img: require("./Images/Categories/Accessories/accessories4.jpg"), id: 'ac-004'},
     {name: 'Enchanted Garden Gown', price: 100, newArrival: true, img: require("./Images/Categories/Accessories/accessories5.jpg"), id: 'ac-005'},
     {name: 'Enchanted Garden Gown', price: 100, img: require("./Images/Categories/Accessories/accessories6.jpg"), id: 'ac-006'},
     {name: 'Enchanted Garden Gown', price: 100, img: require("./Images/Categories/Accessories/accessories7.jpg"), id: 'ac-007'},
-    {name: 'City Lights Tunic', price: 100, newArrival: true, img: require("./Images/Categories/Tops/shirt6.jpg"), id: 'bl-001'},
     {name: 'Enchanted Garden Gown', price: 100, img: require("./Images/Categories/Accessories/accessories8.jpg"), id: 'ac-008'},
     {name: 'Enchanted Garden Gown', price: 100, img: require("./Images/Categories/Accessories/jewelry1.jpg"), id: 'jw-001'},
     {name: 'Enchanted Garden Gown', price: 100, img: require("./Images/Categories/Accessories/jewelry2.jpg"), id: 'jw-002'},
     {name: 'Enchanted Garden Gown', price: 100, img: require("./Images/Categories/Accessories/jewelry3.jpg"), id: 'jw-003'},
     {name: 'Enchanted Garden Gown', price: 100, img: require("./Images/Categories/Accessories/jewelry4.jpg"), id: 'jw-004'},
-    //{name: 'Enchanted Garden Gown', price: 100, img: require("./Images/Categories/Accessories/jewelry5.jpg"), id: 'jw-005'},
+    {name: 'Enchanted Garden Gown', price: 100, img: require("./Images/Categories/Accessories/jewelry5.jpg"), id: 'jw-005'},
     {name: 'Enchanted Garden Gown', price: 100, img: require("./Images/Categories/Accessories/jewelry6.jpg"), id: 'jw-006'},
     {name: 'Enchanted Garden Gown', price: 100, img: require("./Images/Categories/Accessories/jewelry7.jpg"), id: 'jw-007'},
     {name: 'Enchanted Garden Gown', price: 100, img: require("./Images/Categories/Accessories/jewelry8.jpg"), id: 'jw-008'},
     {name: 'Enchanted Garden Gown', price: 100, img: require("./Images/Categories/Accessories/jewelry9.jpg"), id: 'jw-009'},
-    {name: 'Enchanted Garden Gown', price: 100, img: require("./Images/Categories/Accessories/jewelry10.jpg"), id: 'jw-010'},
+    {name: 'Enchanted Garden Gown', price: 100, img: require("./Images/Categories/Accessories/cap1.jpg"), id: 'cp-001'},
+    {name: 'Enchanted Garden Gown', price: 100, img: require("./Images/Categories/Accessories/cap2.jpg"), id: 'cp-002'},
+    {name: 'Enchanted Garden Gown', price: 100, img: require("./Images/Categories/Accessories/cap3.jpg"), id: 'cp-003'},
+    {name: 'Enchanted Garden Gown', price: 100, img: require("./Images/Categories/Accessories/cap4.jpg"), id: 'cp-004'},
+    {name: 'Enchanted Garden Gown', price: 100, img: require("./Images/Categories/Accessories/cap5.jpg"), id: 'cp-005'},
+    {name: 'Enchanted Garden Gown', price: 100, img: require("./Images/Categories/Accessories/cap6.jpg"), id: 'cp-006'},
+    {name: 'Enchanted Garden Gown', price: 100, img: require("./Images/Categories/Accessories/cap7.jpg"), id: 'cp-007'},
+    {name: 'Enchanted Garden Gown', price: 100, img: require("./Images/Categories/Accessories/scarf1.jpg"), id: 'sf-001'},
+    {name: 'Enchanted Garden Gown', price: 100, img: require("./Images/Categories/Accessories/scarf2.jpg"), id: 'sf-002'},
+    {name: 'Enchanted Garden Gown', price: 100, img: require("./Images/Categories/Accessories/scarf3.jpg"), id: 'sf-003'},
+    {name: 'Enchanted Garden Gown', price: 100, img: require("./Images/Categories/Accessories/scarf4.jpg"), id: 'sf-004'},
+    {name: 'Enchanted Garden Gown', price: 100, img: require("./Images/Categories/Accessories/scarf5.jpg"), id: 'sf-005'},
+    {name: 'Enchanted Garden Gown', price: 100, img: require("./Images/Categories/Accessories/scarf6.jpg"), id: 'sf-006'},
+    {name: 'Enchanted Garden Gown', price: 100, img: require("./Images/Categories/Accessories/scarf7.jpg"), id: 'sf-007'},
+    {name: 'Enchanted Garden Gown', price: 100, img: require("./Images/Categories/Accessories/scarf8.jpg"), id: 'sf-008'},
+    {name: 'Enchanted Garden Gown', price: 100, img: require("./Images/Categories/Accessories/socks1.jpg"), id: 'so-001'},
+    {name: 'Enchanted Garden Gown', price: 100, img: require("./Images/Categories/Accessories/socks2.jpg"), id: 'so-002'},
+    {name: 'Enchanted Garden Gown', price: 100, img: require("./Images/Categories/Accessories/socks3.jpg"), id: 'so-003'},
+    {name: 'Enchanted Garden Gown', price: 100, img: require("./Images/Categories/Accessories/socks4.jpg"), id: 'so-004'},
+    {name: 'Enchanted Garden Gown', price: 100, img: require("./Images/Categories/Accessories/socks5.jpg"), id: 'so-005'},
+    {name: 'Enchanted Garden Gown', price: 100, img: require("./Images/Categories/Accessories/socks6.jpg"), id: 'so-006'},
+    {name: 'Enchanted Garden Gown', price: 100, img: require("./Images/Categories/Accessories/socks7.jpg"), id: 'so-007'},
 ]
 
-const shirtsData = [
+export const shirtsData = [
+    {name: 'City Lights Tunic', price: 100, newArrival: true, img: require("./Images/Categories/Tops/shirt6.jpg"), id: 'bl-001'},
     {name: 'Mountain Explorer Shirt', price: 100, img: require("./Images/Categories/Tops/shirt2.jpg"), id: 'bl-004'},
     {name: 'Forest Wanderer Blouse', price: 100, img: require("./Images/Categories/Tops/shirt3.jpg"), id: 'bl-005'},
     {name: 'Starlight Skies Shirt', price: 100, newArrival: true, img: require("./Images/Categories/Tops/shirt4.jpg"), id: 'bl-002'},
-    //{name: 'Tropical Paradise Tunic', price: 100, newArrival: true, img: require("./Images/Categories/Tops/shirt5.jpg"), id: nanoid()},
     {name: 'Wild Safari Shirt', price: 100, img: require("./Images/Categories/Tops/shirt7.jpg"), id: 'bl-006'},
     {name: 'Midnight Magic Blouse', price: 100, img: require("./Images/Categories/Tops/shirt8.jpg"), id: 'bl-007'},
     {name: 'Midnight Magic Blouse', price: 100, img: require("./Images/Categories/Tops/shirt9.jpg"), id: 'bl-008'},
 ]
 
 export const skirtsData = [
-    {name: 'Enchanted Garden Gown', price: 100, img: require("./Images/Categories/Skirts/skirt3.jpg"), id: 'sk-001'},
+    {name: 'Wide Flay Skirt', price: 100, img: require("./Images/Categories/Skirts/skirt3.jpg"), id: 'sk-001'},
     {name: 'Enchanted Garden Gown', price: 100, newArrival: true, img: require("./Images/Categories/Skirts/skirt1.jpg"), id: 'sk-002'},
     {name: 'Enchanted Garden Gown', price: 100, newArrival: true, img: require("./Images/Categories/Skirts/skirt2.jpg"), id: 'sk-003'},
     {name: 'Enchanted Garden Gown', price: 100, img: require("./Images/Categories/Skirts/skirt4.jpg"), id: 'sk-004'},
@@ -129,21 +149,53 @@ export const skirtsData = [
     {name: 'Enchanted Garden Gown', price: 100, img: require("./Images/Categories/Skirts/skirt10.jpg"), id: 'sk-010'},
 ]
 
-const pantsData = [
+export const pantsData = [
     {name: 'Smark Ankle Pants', price: 100, img: require("./Images/Categories/Pants/trousers1.jpg"), id: 'tr-001'},
     {name: 'Enchanted Garden Gown', price: 100, img: require("./Images/Categories/Pants/trousers2.jpg"), id: 'tr-002'},
     {name: 'Side Slitted Denim', price: 100, img: require("./Images/Categories/Pants/trousers3.jpg"), id: 'tr-003'},
     {name: 'Pleated Straight Pants', price: 100, img: require("./Images/Categories/Pants/trousers4.jpg"), id: 'tr-004'},
     {name: 'Enchanted Garden Gown', price: 100, img: require("./Images/Categories/Pants/trousers5.jpg"), id: 'tr-005'},
     {name: 'Peach Jogger Pants', price: 100, img: require("./Images/Categories/Pants/trousers6.jpg"), id: 'tr-006'},
+    {name: 'Side Slitted Denim', price: 100, img: require("./Images/Categories/Pants/trousers7.jpg"), id: 'tr-007'},
+    {name: 'Pleated Straight Pants', price: 100, img: require("./Images/Categories/Pants/trousers8.jpg"), id: 'tr-008'},
+    {name: 'Enchanted Garden Gown', price: 100, img: require("./Images/Categories/Pants/trousers9.jpg"), id: 'tr-009'},
 ]
 
-const shoesData = [
-    {name: 'Enchanted Garden Gown', price: 100, img: require("./Images/Categories/Shoes/shoe1.jpg"), id: 'jw-011'},
-    {name: 'Enchanted Garden Gown', price: 100, img: require("./Images/Categories/Shoes/shoe2.jpg"), id: 'jw-012'},
-    {name: 'Enchanted Garden Gown', price: 100, img: require("./Images/Categories/Shoes/shoe3.jpg"), id: 'jw-013'},
-    {name: 'Enchanted Garden Gown', price: 100, img: require("./Images/Categories/Shoes/shoe4.jpg"), id: 'jw-014'},
-    {name: 'Enchanted Garden Gown', price: 100, img: require("./Images/Categories/Shoes/shoe5.jpg"), id: 'jw-015'},
+export const shoesData = [
+    {name: 'Enchanted Garden Gown', price: 100, img: require("./Images/Categories/Shoes/shoe1.jpg"), id: 'shs-001'},
+    {name: 'Enchanted Garden Gown', price: 100, img: require("./Images/Categories/Shoes/shoe2.jpg"), id: 'shs-002'},
+    {name: 'Enchanted Garden Gown', price: 100, img: require("./Images/Categories/Shoes/shoe3.jpg"), id: 'shs-003'},
+    {name: 'Enchanted Garden Gown', price: 100, img: require("./Images/Categories/Shoes/shoe4.jpg"), id: 'shs-004'},
+    {name: 'Enchanted Garden Gown', price: 100, img: require("./Images/Categories/Shoes/shoe5.jpg"), id: 'shs-005'},
+    {name: 'Enchanted Garden Gown', price: 100, img: require("./Images/Categories/Shoes/shoe6.jpg"), id: 'shs-006'},
+    {name: 'Enchanted Garden Gown', price: 100, img: require("./Images/Categories/Shoes/shoe7.jpg"), id: 'shs-007'},
 ]
 
-export { womenData, dressesData, accessoriesData, shirtsData, pantsData, shoesData }
+export const sportswearsData = [
+    {name: 'Enchanted Garden Gown', price: 100, img: require("./Images/Categories/Sportswear/sportswear1.jpg"), id: 'spw-001'},
+    {name: 'Enchanted Garden Gown', price: 100, img: require("./Images/Categories/Sportswear/sportswear2.jpg"), id: 'spw-002'},
+    {name: 'Enchanted Garden Gown', price: 100, img: require("./Images/Categories/Sportswear/sportswear3.jpg"), id: 'spw-003'},
+    {name: 'Enchanted Garden Gown', price: 100, img: require("./Images/Categories/Sportswear/sportswear4.jpg"), id: 'spw-004'},
+    {name: 'Enchanted Garden Gown', price: 100, img: require("./Images/Categories/Sportswear/sportswear5.jpg"), id: 'spw-005'},
+    {name: 'Enchanted Garden Gown', price: 100, img: require("./Images/Categories/Sportswear/sportswear6.jpg"), id: 'spw-006'},
+    {name: 'Enchanted Garden Gown', price: 100, img: require("./Images/Categories/Sportswear/sportswear7.jpg"), id: 'spw-007'},
+    {name: 'Enchanted Garden Gown', price: 100, img: require("./Images/Categories/Sportswear/sportswear8.jpg"), id: 'spw-008'},
+    {name: 'Enchanted Garden Gown', price: 100, img: require("./Images/Categories/Sportswear/sportswear9.jpg"), id: 'spw-009'},
+]
+
+export const jacketsData = [
+    {name: 'Enchanted Garden Gown', price: 100, img: require("./Images/Categories/Jackets/jacket1.jpg"), id: 'jk-001'},
+    {name: 'Enchanted Garden Gown', price: 100, img: require("./Images/Categories/Jackets/jacket2.jpg"), id: 'jk-002'},
+    {name: 'Enchanted Garden Gown', price: 100, img: require("./Images/Categories/Jackets/jacket3.jpg"), id: 'jk-003'},
+    {name: 'Enchanted Garden Gown', price: 100, img: require("./Images/Categories/Jackets/jacket4.jpg"), id: 'jk-004'},
+    {name: 'Enchanted Garden Gown', price: 100, img: require("./Images/Categories/Jackets/jacket5.jpg"), id: 'jk-005'},
+    {name: 'Enchanted Garden Gown', price: 100, img: require("./Images/Categories/Jackets/jacket6.jpg"), id: 'jk-006'},
+    {name: 'Enchanted Garden Gown', price: 100, img: require("./Images/Categories/Jackets/jacket7.jpg"), id: 'jk-007'},
+    {name: 'Enchanted Garden Gown', price: 100, img: require("./Images/Categories/Jackets/jacket8.jpg"), id: 'jk-008'},
+    {name: 'Enchanted Garden Gown', price: 100, img: require("./Images/Categories/Jackets/jacket9.jpg"), id: 'jk-009'},
+    {name: 'Enchanted Garden Gown', price: 100, img: require("./Images/Categories/Jackets/jacket10.jpg"), id: 'jk-010'},
+    {name: 'Enchanted Garden Gown', price: 100, img: require("./Images/Categories/Jackets/jacket11.jpg"), id: 'jk-011'},
+    {name: 'Enchanted Garden Gown', price: 100, img: require("./Images/Categories/Jackets/jacket12.jpg"), id: 'jk-012'},
+]
+
+export const allData = [ ...dressesData, ...accessoriesData, ...shirtsData, ...skirtsData, ...pantsData, ...shoesData, ...jacketsData, ...sportswearsData]

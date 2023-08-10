@@ -158,7 +158,7 @@ const Cart = () => {
                         <p>YOU DO NOT HAVE ANY ITEM ON YOUR CART</p>
                         <p className="m-auto mt-2 max-w-md">Want to add items you love to your cart? Click the plus icon on the product image to add them to your cart.</p>
 
-                        <Link className="block text-lg font-bold px-5 py-2 mt-28 w-max m-auto bg-black text-white" to={'/women'}>Shop now</Link>
+                        <Link className="block text-lg font-bold px-5 py-2 mt-28 w-max m-auto bg-black text-white" to={'/all-products'}>Shop now</Link>
                     </div>
                 }         
             </div>

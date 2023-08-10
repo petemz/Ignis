@@ -46,7 +46,7 @@ const Wishlist = () => {
                             <p>YOU DO NOT HAVE ANY ITEM ON YOUR WISHLIST</p>
                             <p className="m-auto mt-2 max-w-md">Want to save items you love for later? Click the heart icon on the product image to add them to your wislist.</p>
 
-                            <Link className="block text-lg font-bold px-5 py-2 mt-28 w-max m-auto bg-black text-white" to={'/women'}>Shop now</Link>
+                            <Link className="block text-lg font-bold px-5 py-2 mt-28 w-max m-auto bg-black text-white" to={'/all-peoducts'}>Shop now</Link>
                         </div>
                     }
                 </div>
