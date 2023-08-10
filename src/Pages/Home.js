@@ -56,7 +56,7 @@ const  Home = () => {
     })
 
     return (
-        <div className="w-full h-full">
+        <div className="w-full h-screen">
             {slides[currentSlide]}
 
             <div className="absolute bottom-10 left-5 flex flex-col items-center">

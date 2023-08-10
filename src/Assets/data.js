@@ -74,13 +74,13 @@ export const dressesData = [
     {name: 'Azure Skies Midi Dress', price: 100, newArrival: true, img: require("./Images/Categories/Dresses/dress6.jpg"), id: 'dr-006'},
     {name: 'Pearl Petals Dress', price: 100, img: require("./Images/Categories/Dresses/dress7.jpg"), id:'dr-007'},
     {name: 'Starry Night Gown', price: 100, img: require("./Images/Categories/Dresses/dress8.jpg"), id: 'dr-008'},
-    {name: 'Blossom Dream Dress', price: 100, newArrival: true, img: require("./Images/Categories/Dresses/dress9.jpg"), id: 'dr-009'},
+    //{name: 'Blossom Dream Dress', price: 100, newArrival: true, img: require("./Images/Categories/Dresses/dress9.jpg"), id: 'dr-009'},
     {name: 'Serene Serendipity Dress', price: 100, newArrival: true, img: require("./Images/Categories/Dresses/dress10.jpg"), id: 'dr-010'},
     {name: 'Vintage Rose Frock', price: 100, newArrival: true, img: require("./Images/Categories/Dresses/dress11.jpg"), id: 'dr-011'},
-    {name: 'Celestial Sparkle Dress', price: 100, img: require("./Images/Categories/Dresses/dress12.jpg"), id: 'dr-012'},
+    //{name: 'Celestial Sparkle Dress', price: 100, img: require("./Images/Categories/Dresses/dress12.jpg"), id: 'dr-012'},
     {name: 'Dazzling Daffodil Gown', price: 100, newArrival: true, img: require("./Images/Categories/Dresses/dress13.jpg"), id: 'dr-013'},
     {name: 'Whimsical Willow Dress', price: 100, img: require("./Images/Categories/Dresses/dress14.jpg"), id: 'dr-014'},
-    {name: 'Coral Cascade Gown', price: 100, newArrival: true, img: require("./Images/Categories/Dresses/dress15.jpg"), id: 'dr-015'},
+    //{name: 'Coral Cascade Gown', price: 100, newArrival: true, img: require("./Images/Categories/Dresses/dress15.jpg"), id: 'dr-015'},
     {name: 'Ocean Breeze Maxi Dress', price: 100, img: require("./Images/Categories/Dresses/dress16.jpg"), id: 'dr-016'},
 ]
 

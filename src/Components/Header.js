@@ -8,7 +8,7 @@ const Header = ({color}) => {
     const [isNav, setIsNav] = useState(false)
 
     return (
-        <header style={{ color: color }} className="fixed z-50 left-0 top-0 hover:bg-[#faf9f8] hover:bg-opacity-[95%] w-full grid grid-cols-3 px-6 pb-5 pt-6">
+        <header style={{ color: color }} className="fixed z-50 left-0 top-0 hover:bg-white w-full grid grid-cols-3 px-6 pb-5 pt-6">
             <div className="lg:hidden text-base font-medium h-max">
                 <Link to={'/all-products'} className="mr-6">Shop</Link>
 

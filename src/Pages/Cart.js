@@ -43,7 +43,7 @@ const Cart = () => {
     }
 
     return (
-        <div className="pt-36 h-full overflow-y-scroll">
+        <div className="pt-36 h-full ">
             <Header />
 
             <div className="w-full max-w-[900px] p-3 mb-10 m-auto text-3xl font-medium h-max bg-orange-100 text-center">
