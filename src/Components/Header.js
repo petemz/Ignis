@@ -8,13 +8,13 @@ const Header = ({color}) => {
     const [isNav, setIsNav] = useState(false)
 
     return (
-        <header style={{ color: color }} className="fixed z-50 left-0 top-0 hover:bg-white w-full grid grid-cols-3 px-6 pb-5 pt-6">
-            <div className="lg:hidden text-base font-medium h-max">
+        <header style={{ color: color }} className="fixed z-50 left-0 top-0 hover:bg-white w-full grid grid-cols-3 sm:grid-cols-[50px_1fr_1fr] px-6 pb-5 pt-6">
+            <div className="sm:hidden text-base font-medium h-max">
                 <Link to={'/all-products'} className="mr-6">Shop</Link>
 
                 <button className="mr-6">Collections</button>
 
-                <button className="mr-6">Shoes</button>
+                <Link to={'/category/shoes'} className="mr-6">Shoes</Link>
 
                 <button className="">Search</button>
             </div>
@@ -22,7 +22,7 @@ const Header = ({color}) => {
             {/*Hamburger menu*/}
             <button 
                 onClick={() => setIsNav(true)} 
-                className="-lg:hidden w-max h-max"
+                className="-sm:hidden w-max h-max"
             >
                 <div class="w-8 h-max ">
                     <div class="h-[5px] mb-1 rounded-md bg-black"></div>
@@ -34,13 +34,13 @@ const Header = ({color}) => {
 
                             
             {isNav && 
-                <div className="absolute w-80 -lg:hidden border-r border-black bg-[#faf9f8]">
+                <div className="absolute w-80 -sm:hidden border-r border-black bg-[#faf9f8]">
                     <div className="p-5 pl-[15%] flex flex-col justify-center h-screen text-5xl font-semibold">
-                        <Link to={'/all-products'} className="my-10 transform transiti hover:italic block w-max">Shop</Link>
+                        <Link to={'/all-products'} className="my-10 hover:italic block w-max">Shop</Link>
 
                         <button className="my-10 block hover:italic w-max">Collections</button>
 
-                        <button className="my-10 block hover:italic w-max">Shoes</button>
+                        <Link to={'/category/shoes'} className="my-10 block hover:italic w-max">Shoes</Link>
 
                         <button className="my-10 block hover:italic w-max">Search</button> 
 

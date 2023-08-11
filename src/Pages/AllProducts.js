@@ -6,9 +6,7 @@ import Footer from "../Components/Footer"
 import Section from "../Components/Section"
 import { allData } from "../Assets/data"
 
-const Women = () => {
-    //const {  } = useContext(Context)
-
+const AllProducts = () => {
     const categories = [
         {name: "Dresses", link: "/category/dresses", img: require("../Assets/Images/category-icons/dresses.jpg")},
         {name: "Shirts", link: "/category/shirts", img: require("../Assets/Images/category-icons/shirts.jpg")},
@@ -54,4 +52,4 @@ const Women = () => {
     )
 }
 
-export default Women
+export default AllProducts

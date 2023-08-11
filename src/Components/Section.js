@@ -9,12 +9,13 @@ const Section = ({ items }) => {
     const [newIem, setNewItem] = useState({})
     const cartRef = useRef(null)
 
-    /*const handleClickOutside = (event) => {
-        if (cartRef.current && !cartRef.current.contains(event.target)) {
+    const handleClickOutside = (event) => {
+        /*if (cartRef.current && !cartRef.current.contains(event.target)) {
           if(isCartModal){ 
             setisCartModal(false)
             }
-        }
+        }*/
+        console.log('outside')
     }
 
     useEffect(() => {
@@ -27,7 +28,7 @@ const Section = ({ items }) => {
         return () => {
           document.removeEventListener('click', handleDocumentClick)
         };
-    }, [])*/
+    }, [])
 
     /*const filters = [
         'colour', 'size', 'price', 'material', 'others'
@@ -57,10 +58,10 @@ const Section = ({ items }) => {
                 )}
             </div>*/}
 
-            <div className="w-full grid grid-cols-4 sm:grid-cols-3 xs:grid-cols-2 gap-x-4 gap-y-10">
+            <div className="w-full grid grid-cols-4 sm:grid-cols-3 xs:grid-cols-2 grid-flow-dense gap-x-4 gap-y-10">
                 {items.map((item, index) => {
                     return (
-                        <div className={`${index % 9 !== 4 ? 'h-max' : 'row-span-2 col-span-2'} ${index % 9 === 4 & index % 2 === 1 && '-lg:col-start-3 -sm:col-start-2'} ${index % 9 === 4 & index % 2 !== 1 && 'sm:col-start-1'}`} key={index}>
+                        <div style={{  }} className={`${index % 9 !== 4 ? 'h-max' : 'row-span-2 col-span-2'} ${index % 9 === 4 & index % 2 === 1 && 'col-start-3 sm:col-start-2 xs:col-start-1'} ${index % 9 === 4 & index % 2 !== 1 && 'sm:col-start-1 '}`} key={index}>
                             <div className="h-[calc(100%-90px)] relative">
                                 <img className="w-full h-full object-cover object-top" src={item.img} alt="" />
                                 <button

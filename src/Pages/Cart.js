@@ -1,4 +1,4 @@
-import { useContext, useState } from "react"
+import { useContext } from "react"
 import { Context } from "../Context"
 import { Link } from "react-router-dom"
 import Header from "../Components/Header"
@@ -39,7 +39,7 @@ const Cart = () => {
     }
     
     const handleFav = (item) => {
-        !isFav(item.id) ? handleAddFav(item) : handleRemoveFav(item)
+        isFav ? handleRemoveFav(item) : handleAddFav(item) 
     }
 
     return (
