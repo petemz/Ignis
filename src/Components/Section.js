@@ -27,7 +27,7 @@ const Section = ({ items }) => {
     
         return () => {
           document.removeEventListener('click', handleDocumentClick)
-        };
+        }
     }, [])
 
     /*const filters = [
@@ -41,7 +41,7 @@ const Section = ({ items }) => {
     const handleCart = (item) => {
         addToCart(item)
         setNewItem(item)
-        setTimeout(() => setisCartModal(false), 4000)
+        setTimeout(() => setisCartModal(false), 2500)
         setisCartModal(true)
     }
 
@@ -61,11 +61,11 @@ const Section = ({ items }) => {
             <div className="w-full grid grid-cols-4 sm:grid-cols-3 xs:grid-cols-2 grid-flow-dense gap-x-4 gap-y-10">
                 {items.map((item, index) => {
                     return (
-                        <div style={{  }} className={`${index % 9 !== 4 ? 'h-max' : 'row-span-2 col-span-2'} ${index % 9 === 4 & index % 2 === 1 && 'col-start-3 sm:col-start-2 xs:col-start-1'} ${index % 9 === 4 & index % 2 !== 1 && 'sm:col-start-1 '}`} key={index}>
+                        <div className={`${index % 9 !== 4 ? 'h-max' : 'row-span-2 col-span-2'} ${index % 9 === 4 & index % 2 === 1 && 'col-start-3 sm:col-start-2 xs:col-start-1'} ${index % 9 === 4 & index % 2 !== 1 && 'sm:col-start-1 '}`} key={index}>
                             <div className="h-[calc(100%-90px)] relative">
                                 <img className="w-full h-full object-cover object-top" src={item.img} alt="" />
-                                <button
-                                    className="h-8 w-8 hover:scale-110 absolute bottom-6 left-1/2 right-1/2 bg-white bg-opacity-60 hover:bg-opacity-100 flex justify-center items-center rounded-full hover:text-red-500"
+                                <button 
+                                    className="w-max p-2 m-auto absolute border border-neutral-500 hover:border-0 bottom-6 right-0 left-0 hover:scale-110 bg-white bg-opacity-40 hover:bg-opacity-100 rounded-full"
                                     onClick={() => handleCart(item)}
                                 >
                                     <svg className="" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg>
@@ -73,18 +73,18 @@ const Section = ({ items }) => {
                             </div>
                             <div className=" h-[90px] pt-2 relative">
                                 <div className="flex">
-                                    <div className="w-max p-[2px] border rounded-full mr-1">
-                                        <div className="w-4 h-4 border bg-black rounded-full"></div>
+                                    <div className="w-max p-[1px] border rounded-full mr-1">
+                                        <div className="w-[14px] h-[14px] border bg-black rounded-full"></div>
                                     </div>
-                                    <div className="w-max p-[2px] border rounded-full mr-1">
-                                        <div className="w-4 h-4 border bg-gray-300 rounded-full"></div>
+                                    <div className="w-max p-[1px] border rounded-full mr-1">
+                                        <div className="w-[14px] h-[14px] border bg-gray-300 rounded-full"></div>
                                     </div>
-                                    <div className="w-max p-[2px] border rounded-full mr-1">
-                                        <div className="w-4 h-4 border bg-red-500 rounded-full"></div>
+                                    <div className="w-max p-[1px] border rounded-full mr-1">
+                                        <div className="w-[14px] h-[14px] border bg-red-500 rounded-full"></div>
                                     </div>                                
                                 </div>
 
-                                <p className="text-xl font-medium mt-1">{item.name}</p>
+                                <p className="text-lg font-semibold mt-1">{item.name}</p>
                                 <p>${item.price}</p>
                                 {/*<span className="text-xs text-red-400">{item.newArrival && 'New Arrival'}</span>*/}
 

@@ -25,6 +25,12 @@ const ContextProvider = (props) => {
     const handleDelete = (item) => {
         setCart(current => current.filter(prod => prod.id !== item.id))
     }
+    //This function returns the number of items in the cart
+    const amount = () => {
+        let totalAmount = 0
+        cart.map(item => totalAmount += item.amount)
+        return totalAmount
+    }
 
 
     const isFav = (id) => {
@@ -32,7 +38,6 @@ const ContextProvider = (props) => {
     }
 
     const handleAddFav = (item) => {
-        console.log('yupp')
         const index = cart.findIndex(prod => prod.id === item.id)
         index < 0 && setFavs(prevCart => [...prevCart, item])
     }
@@ -48,7 +53,7 @@ const ContextProvider = (props) => {
     }, [cart, favs])
 
     return (
-        <Context.Provider value={{ cart, setCart, addToCart, handleDelete, favs, isFav, handleAddFav, handleRemoveFav }}>
+        <Context.Provider value={{ cart, setCart, addToCart, handleDelete, amount, favs, isFav, handleAddFav, handleRemoveFav }}>
             {props.children}
         </Context.Provider>
     )

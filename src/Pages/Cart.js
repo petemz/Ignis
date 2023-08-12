@@ -57,13 +57,13 @@ const Cart = () => {
                 </div>
 
                 {cart.length > 0 ?
-                    <div className="grid grid-cols-[1fr_350px] sm:grid-cols-1 w-full gap-x-10 justify-center py-10">
+                    <div className="grid grid-cols-[1fr_350px] sm:grid-cols-1 w-full gap-x-10 justify-center p-10">
                         <ul className="">
                             {cart.map(item => {
                                 totalItems += item.amount
                                 totalPrice += item.price * item.amount
                                 return (
-                                    <li className="h-52 rounded-lg max-w-[700px] p-4 mb-5 bg-white flex relative" key={item.id}>
+                                    <li className="-xs:h-52 xs:w-80 mx-auto rounded-lg max-w-[600px] shadow-lg p-4 mb-5 bg-white flex xs:flex-col relative" key={item.id}>
                                         <div className="h-full w-32 mr-8">
                                             <img className="h-full w-full object-cover " src={item.img} alt="" />
                                         </div>
@@ -73,7 +73,7 @@ const Cart = () => {
                                                 <p className="text-2xl font-medium">{item.name}</p>
                                                 <p className="text-lg">${item.price}</p>
 
-                                                <div className="mt-3 text-sm grid grid-cols-2 gap-x-[40%]">
+                                                <div className="mt-3 xs:mb-3 text-sm grid grid-cols-2 xs:gap-x-10 gap-x-[40%]">
                                                     <p className="w-max"><span className="mr-6">ItemId.:</span> <span>{item.id}</span></p>
                                                     <p className="w-max"><span className="mr-6">Color:</span> <span> {item.color}</span></p>
                                                     <p className="w-max"><span className="mr-6">Size:</span> <span> </span></p>

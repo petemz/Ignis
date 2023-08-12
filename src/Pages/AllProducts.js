@@ -20,8 +20,6 @@ const AllProducts = () => {
 
     return (
         <div className="w-full h-full px-[5%] pt-36 pb-24 relative">
-            <Header />
-
             <div className="w-full max-w-[900px] p-3 mb-10 m-auto text-sm h-max bg-orange-100 text-center">
                 <p>Ignis Exclusive</p>
                 <p className=" text-red-500 text-3xl font-semibold">Big Summer Sales. Up to 20% off all items!</p>

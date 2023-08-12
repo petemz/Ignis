@@ -1,6 +1,7 @@
 //import { useContext } from "react"
 import { Routes, Route } from "react-router-dom"
 //import { Context } from "./Context"
+import Header from "./Components/Header"
 import Home from "./Pages/Home"
 import AllProducts from "./Pages/AllProducts"
 import Wishlist from "./Pages/Wishlist"
@@ -8,6 +9,7 @@ import Cart from "./Pages/Cart"
 import SignIn from "./Pages/SignIn"
 import { dressesData, accessoriesData, shirtsData, skirtsData, pantsData, shoesData, jacketsData, sportswearsData} from "./Assets/data"
 import Section from "./Components/Section"
+import Dresses from "./Pages/Categories/Dreses"
 //import Footer from "./Components/Footer"
 
 const App = () => {
@@ -19,7 +21,7 @@ const App = () => {
     { component: <Wishlist />, path: '/wishlist' },
     { component: <Cart />, path: '/cart' },
     { component: <SignIn />, path: '/sigin' },
-    { component: <Section items={dressesData} />, path: '/category/dresses'},
+    { component: <Dresses />, path: '/category/dresses'},
     { component: <Section items={accessoriesData} />, path: '/category/accessories'},
     { component: <Section items={shirtsData} />, path: '/category/shirts'},
     { component: <Section items={skirtsData} />, path: '/category/skirts'},
@@ -31,6 +33,8 @@ const App = () => {
 
   return (
     <div className="App h-full">
+      <Header />
+      
       <Routes>
         {routes.map((route, index) => {
           return (

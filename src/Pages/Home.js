@@ -7,10 +7,8 @@ import Header from "../Components/Header"
 import { Context } from "../Context"
 
 const  Home = () => {
-    const { setCurrentPage } = useContext(Context)
     const slides = [
         <div style={{ backgroundImage:  `url(${homeImg2})`, backgroundPosition: 'center', backgroundSize: 'cover', transition: 'background-image 0.5s' }} className="w-full h-full text-xl font-semibold flex flex-col justify-end pb-[20vh]">
-            <Header />
             <div className="pl-[8vw] text-white">
                 <h1 className="text-5xl mb-3">Season Premiere</h1>
                 <p>Presenting new-season essentials<br/> designed for all your life's moments.</p>                
@@ -18,7 +16,6 @@ const  Home = () => {
 
         </div>,
         <div style={{ backgroundImage:  `url(${homeImg1})`, backgroundPosition: 'center', backgroundSize: 'cover', transition: 'background-image 0.5s' }} className="w-full h-full text-xl font-semibold flex flex-col justify-end pb-[30vh]">
-            <Header />
             <div className="pl-[18vw] text-white">
                 <h1 className="text-5xl mb-3">Summer's Hottest Essentials</h1>
                 <p>Look put together & sleek at the same time</p>                
@@ -26,7 +23,6 @@ const  Home = () => {
 
         </div>,
         <div style={{ backgroundImage:  `url(${homeImg3})`, backgroundPosition: 'center', backgroundSize: 'cover', transition: 'background-image 0.5s' }} className="w-full h-full text-xl font-semibold flex flex-col justify-end pb-[20vh]">
-            <Header/>
             <div className="pl-[8vw]">
                 <h1 className="text-5xl mb-3">Season Premiere</h1>
                 <p>Presenting new-season essentials<br/> designed for all your life's moments.</p>                
@@ -34,7 +30,6 @@ const  Home = () => {
 
         </div>,
         <div style={{ backgroundImage:  `url(${homeImg4})`, backgroundPosition: 'center', backgroundSize: 'cover', transition: 'background-image 0.5s' }} className="w-full h-full text-xl font-semibold flex flex-col justify-end pb-[20vh]">
-            <Header color={'white'}/>
             <div className="pl-[8vw] text-white">
                 <h1 className="text-5xl mb-3">Graphic Tees</h1>
                 <p>Buy merchs of your favorite Animations</p>                

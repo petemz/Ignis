@@ -78,7 +78,7 @@ export const skirtsData = [
     {name: 'Enchanted Garden Gown', price: 100, img: require("./Images/Categories/Skirts/skirt6.jpg"), id: 'sk-006'},
     {name: 'Enchanted Garden Gown', price: 100, img: require("./Images/Categories/Skirts/skirt7.jpg"), id: 'sk-007'},
     {name: 'Enchanted Garden Gown', price: 100, img: require("./Images/Categories/Skirts/skirt8.jpg"), id: 'sk-008'},
-    {name: 'Enchanted Garden Gown', price: 100, img: require("./Images/Categories/Skirts/skirt9.jpg"), id: 'sk-009'},
+    //{name: 'Enchanted Garden Gown', price: 100, img: require("./Images/Categories/Skirts/skirt9.jpg"), id: 'sk-009'},
     {name: 'Enchanted Garden Gown', price: 100, img: require("./Images/Categories/Skirts/skirt10.jpg"), id: 'sk-010'},
 ]
 
@@ -108,7 +108,7 @@ export const sportswearsData = [
     {name: 'Enchanted Garden Gown', price: 100, img: require("./Images/Categories/Sportswear/sportswear1.jpg"), id: 'spw-001'},
     {name: 'Enchanted Garden Gown', price: 100, img: require("./Images/Categories/Sportswear/sportswear2.jpg"), id: 'spw-002'},
     {name: 'Enchanted Garden Gown', price: 100, img: require("./Images/Categories/Sportswear/sportswear3.jpg"), id: 'spw-003'},
-    {name: 'Enchanted Garden Gown', price: 100, img: require("./Images/Categories/Sportswear/sportswear4.jpg"), id: 'spw-004'},
+    //{name: 'Enchanted Garden Gown', price: 100, img: require("./Images/Categories/Sportswear/sportswear4.jpg"), id: 'spw-004'},
     {name: 'Enchanted Garden Gown', price: 100, img: require("./Images/Categories/Sportswear/sportswear5.jpg"), id: 'spw-005'},
     {name: 'Enchanted Garden Gown', price: 100, img: require("./Images/Categories/Sportswear/sportswear6.jpg"), id: 'spw-006'},
     {name: 'Enchanted Garden Gown', price: 100, img: require("./Images/Categories/Sportswear/sportswear7.jpg"), id: 'spw-007'},
