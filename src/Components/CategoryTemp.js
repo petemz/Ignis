@@ -1,5 +1,5 @@
 import Footer from "./Footer"
-import Section from "./Section"
+import Section from "./ProductSection"
 
 const Category = ({ data, img, introText }) => {
     return (

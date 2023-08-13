@@ -20,13 +20,13 @@ const Section = ({ items }) => {
 
     useEffect(() => {
         const handleDocumentClick = (event) => {
-          handleClickOutside(event)
+            handleClickOutside(event)
         }
     
         document.addEventListener('click', handleDocumentClick)
     
         return () => {
-          document.removeEventListener('click', handleDocumentClick)
+            document.removeEventListener('click', handleDocumentClick)
         }
     }, [])
 
@@ -38,10 +38,21 @@ const Section = ({ items }) => {
         !isFav(item.id) ? handleAddFav(item) : handleRemoveFav(item)
     }
 
+    const [timerId, setTimerId] = useState(null)
+
     const handleCart = (item) => {
         addToCart(item)
+    
+        // Clear the existing timer if it exists
+        timerId && clearTimeout(timerId)
+    
+        // Set a new timer with the original time (2500)
+        const newTimerId = setTimeout(() => {
+            setisCartModal(false)
+        }, 2500)
+    
         setNewItem(item)
-        setTimeout(() => setisCartModal(false), 2500)
+        setTimerId(newTimerId)
         setisCartModal(true)
     }
 
@@ -98,6 +109,7 @@ const Section = ({ items }) => {
                     )}
                 )}
             </div>
+
             {isCartModal && 
                 <div ref={cartRef} className="fixed z-[999] text-lg bg-white border border-black border-r-0 w-96 top-0 right-0 py-10 p-4">
                     <p>Item added succesfully!</p>

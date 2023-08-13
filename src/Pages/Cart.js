@@ -58,10 +58,11 @@ const Cart = () => {
 
                 {cart.length > 0 ?
                     <div className="grid grid-cols-[1fr_350px] sm:grid-cols-1 w-full gap-x-10 justify-center p-10">
-                        <ul className="">
+                        <ul className="sm:mb-20">
                             {cart.map(item => {
                                 totalItems += item.amount
                                 totalPrice += item.price * item.amount
+
                                 return (
                                     <li className="-xs:h-52 xs:w-80 mx-auto rounded-lg max-w-[600px] shadow-lg p-4 mb-5 bg-white flex xs:flex-col relative" key={item.id}>
                                         <div className="h-full w-32 mr-8">
@@ -114,7 +115,7 @@ const Cart = () => {
                             )}
                         </ul> 
 
-                        <div className="w-[350px] h-max p-4 bg-zinc-200">
+                        <div className="w-[350px] mx-auto h-max p-4 bg-zinc-200">
                             <table className="mb-4 border-collapse border-spacing-10">
                                 <colgroup>
                                     <col className="w-60 "/>

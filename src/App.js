@@ -1,6 +1,4 @@
-//import { useContext } from "react"
 import { Routes, Route } from "react-router-dom"
-//import { Context } from "./Context"
 import Header from "./Components/Header"
 import Home from "./Pages/Home"
 import AllProducts from "./Pages/AllProducts"
@@ -8,12 +6,9 @@ import Wishlist from "./Pages/Wishlist"
 import Cart from "./Pages/Cart"
 import SignIn from "./Pages/SignIn"
 import ScrollTop from "./Utilities/ScrollTop"
-import { Dresses, Accessories, Shirts, Skirts, Pants, Shoes, Jackets, Sportswears} from "./Utilities/Categories"
-//import Footer from "./Components/Footer"
+import { Dresses, Accessories, Shirts, Skirts, Pants, Shoes, Jackets, Sportswears} from "./Pages/Categories"
 
 const App = () => {
-  //const { currentPage } = useContext(Context)
-
   const routes = [
     { component: <Home />, path: '/' },
     { component: <AllProducts />, path: '/all-products'},
