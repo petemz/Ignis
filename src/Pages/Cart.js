@@ -143,7 +143,7 @@ const Cart = () => {
                                 <tfoot>
                                     <tr className="border-black border-t-2">
                                         <td className="h-12">Order Total</td>
-                                        <td>{totalPrice}</td>
+                                        <td>${totalPrice}</td>
                                     </tr>                                    
                                 </tfoot>   
 

@@ -1,7 +1,4 @@
-//import { useContext, useEffect } from "react"
-//import { Context } from "../Context"
 import { Link } from "react-router-dom"
-import Header from "../Components/Header"
 import Footer from "../Components/Footer"
 import Section from "../Components/Section"
 import { allData } from "../Assets/data"
@@ -24,8 +21,8 @@ const AllProducts = () => {
                 <p>Ignis Exclusive</p>
                 <p className=" text-red-500 text-3xl font-semibold">Big Summer Sales. Up to 20% off all items!</p>
                 <div className="flex justify-center items-center mt-1">
-                    <span className="mr-16"><a className=" underline" href="#">Explore the Collection</a></span>
-                    <span>Not a Member? <a className=" underline" href="#">Join now!</a></span>                    
+                    <span className="mr-16"><button className=" underline">Explore the Collection</button></span>
+                    <span>Not a Member? <button className=" underline" href="#">Join now!</button></span>                    
                 </div>
             </div>
 
