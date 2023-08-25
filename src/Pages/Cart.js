@@ -1,5 +1,5 @@
 import { useContext } from "react"
-import { Context } from "../Context"
+import { Context } from "../Utilities/Context"
 import { Link } from "react-router-dom"
 import Header from "../Components/Header"
 import Footer from "../Components/Footer"

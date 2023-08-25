@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react"
+import { Link } from "react-router-dom"
 import homeImg1 from "../Assets/Images/home9.jpg"
 import homeImg2 from "../Assets/Images/home2.jpg"
 import homeImg3 from "../Assets/Images/home1.jpg"
@@ -6,7 +7,8 @@ import homeImg4 from "../Assets/Images/home4.jpg"
 
 const  Home = () => {
     const slides = [
-        <div 
+        <Link
+            to={'/all-products'}
             style={{ backgroundImage: `url(${homeImg2})`, transition: 'background-image 0.5s' }} 
             className="w-full h-screen bg-center bg-cover text-xl font-semibold flex flex-col justify-end pb-[20vh]"
         >
@@ -15,8 +17,9 @@ const  Home = () => {
                 <p>Presenting new-season essentials<br/> designed for all your life's moments.</p>                
             </div>
 
-        </div>,
-        <div 
+        </Link>,
+        <Link 
+            to={'/all-products'}
             style={{ backgroundImage: `url(${homeImg1})`, transition: 'background-image 0.5s' }} 
             className="w-full h-screen bg-center bg-cover text-xl font-semibold flex flex-col justify-end pb-[20vh]"
         >
@@ -25,8 +28,9 @@ const  Home = () => {
                 <p>Look put together & sleek at the same time</p>                
             </div>
 
-        </div>,
-        <div 
+        </Link>,
+        <Link 
+            to={'/all-products'}
             style={{ backgroundImage: `url(${homeImg3})`, transition: 'background-image 0.5s' }} 
             className="w-full h-screen bg-center bg-cover text-xl font-semibold flex flex-col justify-end pb-[20vh]"
         >
@@ -35,8 +39,9 @@ const  Home = () => {
                 <p>Presenting new-season essentials<br/> designed for all your life's moments.</p>                
             </div>
 
-        </div>,
-        <div 
+        </Link>,
+        <Link 
+            to={'/all-products'}
             style={{ backgroundImage: `url(${homeImg4})`, transition: 'background-image 0.5s' }} 
             className="w-full h-screen bg-center bg-cover text-xl font-semibold flex flex-col justify-end pb-[20vh]"
         >
@@ -44,7 +49,7 @@ const  Home = () => {
                 <h1 className="text-5xl mb-3">Graphic Tees</h1>
                 <p>Buy merchs of your favorite Animations</p>                
             </div>
-        </div>
+        </Link>
     ]
     const [activeIndex, setActiveIndex] = useState(0)
 

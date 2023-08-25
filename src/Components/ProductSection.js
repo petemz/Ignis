@@ -1,7 +1,9 @@
 import { useContext, useState, useRef, useEffect } from "react"
-import { Context } from "../Context"
+import { Context } from "../Utilities/Context"
 import { Link } from "react-router-dom"
-//import angleDown from "../Assets/Images/down.png"
+import angleDown from "../Assets/Images/down.png"
+import settingsIcon from "../Assets/Icons/settings.svg"
+import sortIcon from "../Assets/Icons/sort.svg"
 
 const Section = ({ items }) => {
     const { isFav, handleAddFav, handleRemoveFav, addToCart} = useContext(Context)
@@ -30,9 +32,9 @@ const Section = ({ items }) => {
         }
     }, [])
 
-    /*const filters = [
-        'colour', 'size', 'price', 'material', 'others'
-    ]*/
+    const filters = [
+        'Colour', 'Size', 'Price', 'Material', 'Others'
+    ]
 
     const handleFav = (item) => {
         !isFav(item.id) ? handleAddFav(item) : handleRemoveFav(item)
@@ -58,16 +60,33 @@ const Section = ({ items }) => {
 
     return ( 
         <div className="">
-            {/*<div className="mb-10 flex">
-                {filters.map(filter => {
-                    return (
-                        <button className=" flex flex-w items-center mr-2 pl-3 pr-2 py-1 border-2 border-black" key={filter}>
-                            <span className="">{filter}</span>
-                            <img className="w-5 ml-5" src={angleDown} alt="" />
-                        </button>
+            <div className="mb-10 flex justify-between font-bold ">
+                <div className="flex text-sm">
+                    {filters.map(filter => {
+                        return (
+                            <button className=" lg:hidden tracking-wide flex flex-w items-center mr-7 py-1 rounded-full  border-gray-400" key={filter}>
+                                <span className=" uppercase">{filter}</span>
+                                <img className="w-5 ml-2" src={angleDown} alt="" />
+                            </button>
+                        )}
                     )}
-                )}
-            </div>*/}
+
+                    <button className="ml-6 lg:ml-0 flex items-center tracking-wide">
+                        <img className="w-5 mr-3" src={settingsIcon} alt="Settings Icon"/>
+                        <span>ALL FILTERS</span>
+                    </button>
+                </div>  
+
+                <div className="flex items-center ">
+                    <button className="mr-10 flex items-center tracking-wide">
+                        <img className="w-5 mr-1" src={sortIcon} alt="Sort Icon" />
+                        <span>SORT BY</span>
+                    </button>
+
+                    <p className=" font-normal">146 items</p>
+                </div>              
+            </div>
+
 
             <div className="w-full grid grid-cols-4 sm:grid-cols-3 xs:grid-cols-2 grid-flow-dense gap-x-4 gap-y-10">
                 {items.map((item, index) => {
@@ -95,7 +114,7 @@ const Section = ({ items }) => {
                                     </div>                                
                                 </div>
 
-                                <p className="text-lg font-semibold mt-1">{item.name}</p>
+                                <p className="text-lg font-medium mt-1">{item.name}</p>
                                 <p>${item.price}</p>
                                 {/*<span className="text-xs text-red-400">{item.newArrival && 'New Arrival'}</span>*/}
 
@@ -111,12 +130,13 @@ const Section = ({ items }) => {
             </div>
 
             {isCartModal && 
-                <div ref={cartRef} className="fixed z-[999] text-lg bg-white border border-black border-r-0 w-96 top-0 right-0 py-10 p-4">
+                <div ref={cartRef} className="fixed z-[999] text-lg bg-white border border-black border-r-0 w-96 top-0 right-0 pt-10 p-4">
                     <p>Item added succesfully!</p>
                     <div className="flex border mt-4 border-black">
                         <img className=" w-[35%] border-r border-black" src={newIem.img} alt="" />
                         <div className=" text-lg font-medium p-3 w-full">
                             <p>{newIem.name}</p>
+                            <p>${newIem.price}</p>
                         </div>
                     </div>
 
