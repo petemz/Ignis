@@ -26,7 +26,7 @@ const App = () => {
   ]
 
   return (
-    <div className="App h-full">
+    <div className="App h-full bg-[#faf9f8]">
       <Header />
 
       <Routes>

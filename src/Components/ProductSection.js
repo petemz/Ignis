@@ -1,9 +1,10 @@
-import { useContext, useState, useRef, useEffect } from "react"
+import { useContext, useState, useRef, } from "react"
 import { Context } from "../Utilities/Context"
 import { Link } from "react-router-dom"
 import angleDown from "../Assets/Images/down.png"
 import settingsIcon from "../Assets/Icons/settings.svg"
 import sortIcon from "../Assets/Icons/sort.svg"
+import { uppercaseFirstLettter } from "../Utilities/Reusables"
 
 const Section = ({ items }) => {
     const { isFav, handleAddFav, handleRemoveFav, addToCart} = useContext(Context)
@@ -11,30 +12,26 @@ const Section = ({ items }) => {
     const [newIem, setNewItem] = useState({})
     const cartRef = useRef(null)
 
-    const handleClickOutside = (event) => {
-        /*if (cartRef.current && !cartRef.current.contains(event.target)) {
-          if(isCartModal){ 
-            setisCartModal(false)
-            }
-        }*/
-        console.log('outside')
+    const [isSortOpen, setIsSortOpen] = useState(false)
+    const [isFilterOpen, setIsFilterOpen] = useState(false)
+    const [filterObj, setFilterObj] = useState({name: '', filters: []})
+    const filterRef = useRef(null)
+
+    const handleFilterOpen = (filterName, filters) => {
+        if(isFilterOpen && filterName === filterObj.name) {
+            setIsFilterOpen(false) 
+            setFilterObj({})
+        } else if (isFilterOpen) {
+            setFilterObj({name: filterName, filters: filters})
+        } else if (isFilterOpen === false) {
+            setIsFilterOpen(true)
+            setFilterObj({name: filterName, filters: filters})
+        }
     }
 
-    useEffect(() => {
-        const handleDocumentClick = (event) => {
-            handleClickOutside(event)
-        }
-    
-        document.addEventListener('click', handleDocumentClick)
-    
-        return () => {
-            document.removeEventListener('click', handleDocumentClick)
-        }
-    }, [])
-
-    const filters = [
-        'Colour', 'Size', 'Price', 'Material', 'Others'
-    ]
+    const colorFilter = ['black', 'beige', 'orange', 'blue', 'brown', 'green', 'multi', 'pink']
+    const materialFilter = ['silk', 'cotton', 'chiffon', 'denim', 'polyester', 'lace', 'leather', 'wool']
+    const sizeFilter = ['xs', 's', 'm', 'l', 'xl', 'xxl', '3xl']
 
     const handleFav = (item) => {
         !isFav(item.id) ? handleAddFav(item) : handleRemoveFav(item)
@@ -60,16 +57,68 @@ const Section = ({ items }) => {
 
     return ( 
         <div className="">
-            <div className="mb-10 flex justify-between font-bold ">
-                <div className="flex text-sm">
-                    {filters.map(filter => {
-                        return (
-                            <button className=" lg:hidden tracking-wide flex flex-w items-center mr-7 py-1 rounded-full  border-gray-400" key={filter}>
-                                <span className=" uppercase">{filter}</span>
-                                <img className="w-5 ml-2" src={angleDown} alt="" />
-                            </button>
-                        )}
-                    )}
+            <div className="mb-10 flex justify-between ">
+                <div className="flex text-sm relative">
+                    <div className="flex relative">
+                        <button 
+                            onClick={() => handleFilterOpen('color', colorFilter)}
+                            className=" tracking-wide flex flex-w items-center mr-7 py-1 rounded-full border-gray-400"
+                        >
+                            <span className=" uppercase">color</span>
+                            <img className={`w-5 ml-2 ${filterObj.name === 'color' && 'rotate-180'}`} src={angleDown} alt="" />
+                        </button>   
+
+                        {isFilterOpen && filterObj.name === 'color' &&
+                            <div ref={filterRef} className="absolute z-[9999] text-lg px-5 top-8 w-60 bg-white">
+                                {colorFilter.map(filter => {
+                                    return (
+                                        <p className="my-4" key="filter">{uppercaseFirstLettter(filter)}</p>
+                                    )}
+                                )}
+                            </div>
+                        }
+                    </div>
+
+                    <div className="relative">
+                        <button 
+                            onClick={() => handleFilterOpen('material', materialFilter)}
+                            className=" tracking-wide flex flex-w items-center mr-7 py-1 rounded-full border-gray-400"
+                        >
+                            <span className=" uppercase">material</span>
+                            <img className={`w-5 ml-2 ${filterObj.name === 'material' && 'rotate-180'}`} src={angleDown} alt="" />
+                        </button>
+
+                        {isFilterOpen && filterObj.name === 'material' &&
+                            <div ref={filterRef} className="absolute z-[9999] text-lg px-5 top-8 w-60 bg-white">
+                                {materialFilter.map(filter => {
+                                    return (
+                                        <p className="my-4" key="filter">{uppercaseFirstLettter(filter)}</p>
+                                    )}
+                                )}
+                            </div>
+                        }
+                    </div>
+
+                    <div className="relative">
+                        <button 
+                            onClick={() => handleFilterOpen('size', sizeFilter)}
+                            className=" tracking-wide flex flex-w items-center mr-7 py-1 rounded-full border-gray-400"
+                        >
+                            <span className=" uppercase">size</span>
+                            <img className={`w-5 ml-2 ${filterObj.name === 'size' && 'rotate-180'}`} src={angleDown} alt="" />
+                        </button>
+                        
+                        {isFilterOpen && filterObj.name === 'size' &&
+                            <div ref={filterRef} className="absolute z-[9999] text-lg px-5 top-8 w-60 bg-white">
+                                {sizeFilter.map(filter => {
+                                    return (
+                                        <p className="my-4" key="filter">{uppercaseFirstLettter(filter)}</p>
+                                    )}
+                                )}
+                            </div>
+                        }
+                    </div>
+
 
                     <button className="ml-6 lg:ml-0 flex items-center tracking-wide">
                         <img className="w-5 mr-3" src={settingsIcon} alt="Settings Icon"/>
@@ -77,11 +126,22 @@ const Section = ({ items }) => {
                     </button>
                 </div>  
 
-                <div className="flex items-center ">
-                    <button className="mr-10 flex items-center tracking-wide">
+
+
+                <div className="flex items-center relative">
+                    <button onClick={() => setIsSortOpen(val => !val)} className="mr-8 flex items-center tracking-wide">
                         <img className="w-5 mr-1" src={sortIcon} alt="Sort Icon" />
                         <span>SORT BY</span>
                     </button>
+
+                    {isSortOpen &&
+                        <div className="absolute z-[9999] text-lg  px-5 top-8 bg-white">
+                            <p className="my-4">Recommended</p>
+                            <p className="my-4">Newest</p>
+                            <p className="my-4">Lowest price</p>
+                            <p className="my-4">Highest price</p>
+                        </div>
+                    }
 
                     <p className=" font-normal">146 items</p>
                 </div>              
@@ -114,7 +174,7 @@ const Section = ({ items }) => {
                                     </div>                                
                                 </div>
 
-                                <p className="text-lg font-medium mt-1">{item.name}</p>
+                                <p className="text-lg mt-1">{item.name}</p>
                                 <p>${item.price}</p>
                                 {/*<span className="text-xs text-red-400">{item.newArrival && 'New Arrival'}</span>*/}
 

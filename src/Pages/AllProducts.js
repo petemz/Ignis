@@ -58,7 +58,7 @@ const AllProducts = () => {
                     <div className="flex w-full overflow-hidden" ref={categoryContainerRef}>
                         {categories.map(category => {
                             return (
-                                <Link to={category.link} className="mr-8 text-xl text-center w-max" key={category.name}>
+                                <Link to={category.link} className="mr-8 text-lg text-center w-max" key={category.name}>
                                     <img className="mb-1 rounded-full" src={category.img} alt="" />                 
                                     <p>{category.name}</p>               
                                 </Link>

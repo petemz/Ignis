@@ -71,8 +71,8 @@ const Cart = () => {
                                         
                                         <div className="flex flex-col justify-between">
                                             <div className="">
-                                                <p className="text-2xl font-medium">{item.name}</p>
-                                                <p className="text-lg">${item.price}</p>
+                                                <p className="text-lg font-medium">{item.name}</p>
+                                                <p className="">${item.price}</p>
 
                                                 <div className="mt-3 xs:mb-3 text-sm grid grid-cols-2 xs:gap-x-10 gap-x-[40%]">
                                                     <p className="w-max"><span className="mr-6">ItemId.:</span> <span>{item.id}</span></p>
