@@ -1,4 +1,5 @@
 import { createContext, useState, useEffect } from "react"
+import { allData } from "../Assets/data"
 
 const Context = createContext()
 
@@ -52,8 +53,13 @@ const ContextProvider = (props) => {
         localStorage.setItem("favorites", JSON.stringify(favs))
     }, [cart, favs])
 
+
+    const [productPage, setProductPage] = useState('')
+
+    const currentProduct = allData.find(product => product.id === productPage)
+
     return (
-        <Context.Provider value={{ cart, setCart, addToCart, handleDelete, amount, favs, isFav, handleAddFav, handleRemoveFav }}>
+        <Context.Provider value={{ cart, setCart, addToCart, handleDelete, amount, favs, isFav, handleAddFav, handleRemoveFav, productPage, setProductPage,currentProduct }}>
             {props.children}
         </Context.Provider>
     )

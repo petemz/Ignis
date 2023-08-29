@@ -4,7 +4,7 @@ import { Link } from "react-router-dom"
 import Filter from "./Filter"
 
 const Section = ({ items }) => {
-    const { isFav, handleAddFav, handleRemoveFav, addToCart} = useContext(Context)
+    const { isFav, handleAddFav, handleRemoveFav, addToCart, setProductPage} = useContext(Context)
     const [isCartModal, setisCartModal] = useState(false)
     const [newIem, setNewItem] = useState({})
     const cartRef = useRef(null)
@@ -64,8 +64,14 @@ const Section = ({ items }) => {
                                     </div>                                
                                 </div>
 
-                                <p className="text-lg mt-1">{item.name}</p>
-                                <p>${item.price}</p>
+                                <Link 
+                                    to={`/productpage/${item.id}`}
+                                    onClick={() => setProductPage(item.id)}
+                                    className="text-l mt-1 hover:underline"
+                                >
+                                    {item.name}
+                                </Link>
+                                <p className="text-sm ">${item.price}</p>
                                 {/*<span className="text-xs text-red-400">{item.newArrival && 'New Arrival'}</span>*/}
 
                                 {/*favorite button*/}

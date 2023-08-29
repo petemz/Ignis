@@ -1,10 +1,23 @@
-import { useContext, useState } from "react"
+import { useContext, useState, useEffect } from "react"
 import { Context } from "../Utilities/Context"
 import { Link } from "react-router-dom"
+import hamburgerIcon from "../Assets/Icons/hamburger.svg"
 
 const Header = ({color}) => {
     const { amount } = useContext(Context)
     const [isNav, setIsNav] = useState(false)
+
+    const handleOutsideClick = () => {
+        setIsNav(false)
+    }
+
+    useEffect(() => {
+        document.addEventListener('mousedown', handleOutsideClick)
+        
+        return () => {
+          document.removeEventListener('mousedown', handleOutsideClick)
+        }
+    }, [])
 
     return (
         <>
@@ -24,12 +37,7 @@ const Header = ({color}) => {
                     onClick={() => setIsNav(true)} 
                     className="-sm:hidden w-max h-max"
                 >
-                    <div className="w-8 h-max ">
-                        <div className="h-[5px] mb-1 rounded-md bg-black"></div>
-                        <div className="h-[5px] ml-auto mb-1 w-2/3 rounded-md bg-black"></div>
-                        <div className="h-[5px] mb-1 rounded-md bg-black"></div>
-                        <div className="h-[5px] ml-auto w-2/3 rounded-md bg-black"></div>
-                    </div>
+                    <img className="w-6" src={hamburgerIcon} alt="" />
                 </button>
 
                 <Link className="text-6xl ml-[10%] xs:ml-[1%] sm:text-start text-center font-extrabold logo" to={"/"}>IGNIS</Link>

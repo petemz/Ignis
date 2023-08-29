@@ -11,16 +11,19 @@ const Filter = ({ items, setDisplayedItems }) => {
 
     const [isSortOpen, setIsSortOpen] = useState(false)
     const [sortType, setSortType] = useState('recommended')
-    const sortRef = useRef(null)
+    const sortItemsRef = useRef(null)
+    const sortButtonRef = useRef(null)
+
 
     const priceLowtoHigh = 
         [...items].sort(function(a, b){
             return parseFloat(a.price) - parseFloat(b.price)
         })
 
-    const handleSortClose = (e) => {
-        sortRef.current && !sortRef.current.contains(e.target) && setIsSortOpen(false)
+    const handleSortClose = () => {
+        isSortOpen ? setIsSortOpen(false) : setIsSortOpen(true)
     }
+    
     const handleSort = (type) => {
         setSortType(type)
         setIsSortOpen(false)
@@ -54,10 +57,17 @@ const Filter = ({ items, setDisplayedItems }) => {
 
 
     useEffect(() => {
-        document.addEventListener('mousedown', handleSortClose)
+        const handleOutsideClick = (e) => {
+            sortItemsRef.current && 
+            !sortItemsRef.current.contains(e.target) && 
+            !sortButtonRef.current.contains(e.target) && 
+            setIsSortOpen(false)
+        }
+
+        document.addEventListener('mousedown', handleOutsideClick)
         
         return () => {
-          document.removeEventListener('mousedown', handleSortClose)
+          document.removeEventListener('mousedown', handleOutsideClick)
         }
     }, [])
 
@@ -132,14 +142,14 @@ const Filter = ({ items, setDisplayedItems }) => {
 
 
             <div className="flex items-center relative">
-                <button onClick={() => setIsSortOpen(val => !val)} className="mr-8 flex items-center tracking-wide">
-                    <img className="w-5 mr-1" src={sortIcon} alt="Sort Icon" />
+                <button ref={sortButtonRef} onClick={() => handleSortClose()} className="mr-8 flex items-center tracking-wide">
+                    <img className={`w-5 mr-1  transition-all duration-75 ${isSortOpen && ' -scale-y-100'}`} src={sortIcon} alt="Sort Icon" />
                     <span>SORT BY</span>
                 </button>
 
                 {isSortOpen &&
-                    <div ref={sortRef} className="absolute z-[9999] text-lg top-8 bg-white accent-black">                    
-                        <label className="block cursor-pointer pl-2 pr-5 py-2 hover:bg-neutral-300">
+                    <div ref={sortItemsRef} className="text-lg top-8 bg-white accent-black absolute z-[9999] ">                    
+                        <label className="block cursor-pointer pl-2 pr-8 py-2 hover:bg-neutral-200">
                             <input
                                 className="mr-2"
                                 type="radio"
@@ -150,7 +160,7 @@ const Filter = ({ items, setDisplayedItems }) => {
                             Recommended
                         </label>
 
-                        <label className="block cursor-pointer pl-2 pr-5 py-2 hover:bg-neutral-300">
+                        <label className="block cursor-pointer pl-2 py-2 hover:bg-neutral-200">
                             <input
                                 className="mr-2"
                                 type="radio"
@@ -161,7 +171,7 @@ const Filter = ({ items, setDisplayedItems }) => {
                             Newest
                         </label>
 
-                        <label className="block cursor-pointer pl-2 pr-5 py-2 hover:bg-neutral-300">
+                        <label className="block cursor-pointer pl-2 py-2 hover:bg-neutral-200">
                             <input
                                 className="mr-2"
                                 type="radio"
@@ -172,7 +182,7 @@ const Filter = ({ items, setDisplayedItems }) => {
                             Lowest Price
                         </label>
 
-                        <label className="block cursor-pointer pl-2 pr-5 py-2 hover:bg-neutral-300">
+                        <label className="block cursor-pointer pl-2 py-2 hover:bg-neutral-200">
                             <input
                                 className="mr-2"
                                 type="radio"
@@ -182,17 +192,10 @@ const Filter = ({ items, setDisplayedItems }) => {
                             />
                             Highest price
                         </label>
-
-                        {/*
-                        <button className=" w-full h-12 text-left px-5 hover:bg-neutral-200">Recommended</button>
-                        <button className=" w-full h-12 text-left px-5 hover:bg-neutral-200">Newest</button>
-                        <button className=" w-full h-12 text-left px-5 hover:bg-neutral-200">Lowest price</button>
-                        <button className=" w-full h-12 text-left px-5 hover:bg-neutral-200">Highest price</button>
-                        */}
                     </div>
                 }
 
-                <p className=" font-normal">146 items</p>
+                <p className=" font-normal">{items.length} items</p>
             </div>              
         </div>
     )

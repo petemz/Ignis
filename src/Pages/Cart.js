@@ -61,7 +61,7 @@ const Cart = () => {
                         <ul className="sm:mb-20">
                             {cart.map(item => {
                                 totalItems += item.amount
-                                totalPrice += item.price * item.amount
+                                totalPrice += item.price.toFixed(2) * item.amount.toFixed(2)
 
                                 return (
                                     <li className="-xs:h-52 xs:w-80 mx-auto rounded-lg max-w-[600px] shadow-lg p-4 mb-5 bg-white flex xs:flex-col relative" key={item.id}>
@@ -78,7 +78,7 @@ const Cart = () => {
                                                     <p className="w-max"><span className="mr-6">ItemId.:</span> <span>{item.id}</span></p>
                                                     <p className="w-max"><span className="mr-6">Color:</span> <span> {item.color}</span></p>
                                                     <p className="w-max"><span className="mr-6">Size:</span> <span> </span></p>
-                                                    <p className="w-max"><span className="mr-6">Subtotal:</span> <span>{item.price * item.amount}</span></p>
+                                                    <p className="w-max"><span className="mr-6">Subtotal:</span> <span>{(item.price * item.amount).toFixed(2)}</span></p>
                                                 </div>
                                             </div>
 
@@ -130,7 +130,7 @@ const Cart = () => {
                                 <tbody>
                                     <tr className="mb-4">
                                         <td className="h-9">Order Value</td>
-                                        <td>{totalPrice}</td>
+                                        <td>{totalPrice.toFixed(2)}</td>
                                     </tr>
                                     <tr>
                                         <td className="h-9">Shipping</td>
@@ -144,7 +144,7 @@ const Cart = () => {
                                 <tfoot>
                                     <tr className="border-black border-t-2">
                                         <td className="h-12">Order Total</td>
-                                        <td>${totalPrice}</td>
+                                        <td>${totalPrice.toFixed(2)}</td>
                                     </tr>                                    
                                 </tfoot>   
 
