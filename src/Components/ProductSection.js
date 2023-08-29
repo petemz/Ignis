@@ -95,7 +95,7 @@ const Section = ({ items }) => {
                         </div>
                     </div>
 
-                    <Link  to={'/cart'} className=" mt-10 h-16 border-2 border-black p-4 w-full block text-lg font-bold text-center hover:bg-black hover:text-white">
+                    <Link  to={'/cart'} className=" mt-10 h-16 border border-black p-4 w-full block text-lg font-bold text-center hover:bg-black hover:text-white">
                         VIEW CART
                     </Link>
 

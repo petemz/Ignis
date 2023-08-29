@@ -18,6 +18,10 @@ module.exports = {
       
       '-sm': {'min': '900px'},
 
+      'mn': {'max': '750px'},
+
+      '-mn': {'min': '750px'},
+
       'xs': {'max': '600px'},
       
       '-xs': {'min': '600px'},
