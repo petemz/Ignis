@@ -36,6 +36,17 @@ const AllProducts = () => {
         }
     }
 
+    function shuffleArray(array) {
+        const shuffledArray = [...array]
+    
+        for (let i = shuffledArray.length - 1; i > 0; i--) {
+            const randomIndex = Math.floor(Math.random() * (i + 1));
+            [shuffledArray[i], shuffledArray[randomIndex]] = [shuffledArray[randomIndex], shuffledArray[i]]
+        }
+    
+        return shuffledArray
+    }
+
     return (
         <div className="w-full h-full px-[5%] pt-36 pb-24 relative">
             <div className="w-full max-w-[900px] p-3 mb-10 m-auto text-sm h-max bg-orange-100 text-center">
@@ -58,7 +69,7 @@ const AllProducts = () => {
                     <div className="flex w-full overflow-hidden" ref={categoryContainerRef}>
                         {categories.map(category => {
                             return (
-                                <Link to={category.link} className="mr-8 text-lg text-center w-max" key={category.name}>
+                                <Link to={category.link} className="mr-8 last:mr-2 text-lg text-center w-max" key={category.name}>
                                     <img className="mb-1 rounded-full" src={category.img} alt="" />                 
                                     <p>{category.name}</p>               
                                 </Link>

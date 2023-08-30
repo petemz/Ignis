@@ -2,12 +2,14 @@ import { useContext, useState, useRef, } from "react"
 import { Context } from "../Utilities/Context"
 import { Link } from "react-router-dom"
 import Filter from "./Filter"
+import favIcon from "../Assets/Icons/add.svg"
 
 const Section = ({ items }) => {
     const { isFav, handleAddFav, handleRemoveFav, addToCart, setProductPage} = useContext(Context)
     const [isCartModal, setisCartModal] = useState(false)
     const [newIem, setNewItem] = useState({})
     const cartRef = useRef(null)
+    const cartButtonRef = useRef(null)
 
     const [displayedItems, setDisplayedItems] = useState(items)
 
@@ -17,7 +19,10 @@ const Section = ({ items }) => {
 
     const [timerId, setTimerId] = useState(null)
 
-    const handleCart = (item) => {
+    const handleCart = (item, e) => {
+        if (!cartButtonRef.current.contains(e.target)) {
+            e.preventDefault()
+        }
         addToCart(item)
     
         // Clear the existing timer if it exists
@@ -26,44 +31,41 @@ const Section = ({ items }) => {
         // Set a new timer with the original time (2500)
         const newTimerId = setTimeout(() => {
             setisCartModal(false)
-        }, 2500)
+        }, 2000)
     
         setNewItem(item)
         setTimerId(newTimerId)
         setisCartModal(true)
     }
 
-
     return ( 
         <div className="">
             <Filter items={items} setDisplayedItems={setDisplayedItems}/>
 
-            <div className="w-full grid grid-cols-4 sm:grid-cols-3 xs:grid-cols-2 grid-flow-dense gap-x-4 gap-y-10">
+            <div className="w-full grid grid-cols-4 sm:grid-cols-3 xs:grid-cols-2 grid-flow-dense gap-x-4 gap-y-4">
                 {displayedItems.map((item, index) => {
                     return (
-                        <div className={`${index % 9 !== 4 ? 'h-max' : 'row-span-2 col-span-2'} ${index % 9 === 4 & index % 2 === 1 && 'col-start-3 sm:col-start-2 xs:col-start-1'} ${index % 9 === 4 & index % 2 !== 1 && 'sm:col-start-1 '}`} key={index}>
-                            <div className="h-[calc(100%-90px)] relative">
+                        <div 
+                            className={`
+                                ${index % 9 !== 4 ? 'h-max' : 'row-span-2 col-span-2'} 
+                                ${index % 9 === 4 & index % 2 === 1 && 'col-start-3 sm:col-start-2 xs:col-start-1'} 
+                                ${index % 9 === 4 & index % 2 !== 1 && 'sm:col-start-1 '}`
+                            } 
+                            key={index}
+                        >
+                            <Link to={`/productpage/${item.id}`} 
+                                className="h-[calc(100%-70px)] block relative"
+                            >
                                 <img className="w-full h-full object-cover object-top" src={item.img} alt="" />
                                 <button 
                                     className="w-max p-2 m-auto absolute border border-neutral-500 hover:border-0 bottom-6 right-0 left-0 hover:scale-110 bg-white bg-opacity-40 hover:bg-opacity-100 rounded-full"
-                                    onClick={() => handleCart(item)}
+                                    onClick={(e) => {handleCart(item, e)}}
+                                    ref={cartButtonRef}
                                 >
-                                    <svg className="" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg>
+                                    <img className="w-full h-full" src={favIcon} alt="" />
                                 </button>
-                            </div>
-                            <div className=" h-[90px] pt-2 relative">
-                                <div className="flex">
-                                    <div className="w-max p-[1px] border rounded-full mr-1">
-                                        <div className="w-[14px] h-[14px] border bg-black rounded-full"></div>
-                                    </div>
-                                    <div className="w-max p-[1px] border rounded-full mr-1">
-                                        <div className="w-[14px] h-[14px] border bg-gray-300 rounded-full"></div>
-                                    </div>
-                                    <div className="w-max p-[1px] border rounded-full mr-1">
-                                        <div className="w-[14px] h-[14px] border bg-red-500 rounded-full"></div>
-                                    </div>                                
-                                </div>
-
+                            </Link>
+                            <div className=" h-[70px] pt-2 pr-4 relative">
                                 <Link 
                                     to={`/productpage/${item.id}`}
                                     onClick={() => setProductPage(item.id)}
@@ -75,7 +77,7 @@ const Section = ({ items }) => {
                                 {/*<span className="text-xs text-red-400">{item.newArrival && 'New Arrival'}</span>*/}
 
                                 {/*favorite button*/}
-                                <button onClick={() => handleFav(item)} className={`h-6 w-6 absolute top-2 right-1 ${isFav(item.id) ? 'text-red-500' : 'text-gray-200 hover:text-red-500'}`}>
+                                <button onClick={() => handleFav(item)} className={`h-4 w-4 absolute top-3 right-0 ${isFav(item.id) ? 'text-red-500' : 'text-gray-200 hover:text-red-500'}`}>
                                     <svg fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M47.6 300.4L228.3 469.1c7.5 7 17.4 10.9 27.7 10.9s20.2-3.9 27.7-10.9L464.4 300.4c30.4-28.3 47.6-68 47.6-109.5v-5.8c0-69.9-50.5-129.5-119.4-141C347 36.5 300.6 51.4 268 84L256 96 244 84c-32.6-32.6-79-47.5-124.6-39.9C50.5 55.6 0 115.2 0 185.1v5.8c0 41.5 17.2 81.2 47.6 109.5z"/></svg>
                                 </button>
                             </div>

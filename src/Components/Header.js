@@ -22,7 +22,7 @@ const Header = ({color}) => {
     return (
         <>
             <header style={{ color: color }} className="fixed z-50 left-0 top-0 hover:bg-white hover:bg-opacity-90 w-full items-center grid grid-cols-3 sm:grid-cols-[50px_1fr_1fr] px-6 py-3">
-                <div className="sm:hidden text-base font-medium h-max">
+                <div className="sm:hidden text-sm font-medium h-max">
                     <Link to={'/all-products'} className="mr-6">Shop</Link>
 
                     <button className="mr-6">Collections</button>

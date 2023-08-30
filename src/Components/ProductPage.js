@@ -54,7 +54,7 @@ const ProductPage = () => {
                 >
                     <div>
                         <div className="mn:hidden -mn:mb-8">
-                            <p className="text-3xl ">{currentProduct.name}</p>
+                            <p className="text-3xl mb-1">{currentProduct.name}</p>
                             <p className="text-lg">{currentProduct.price}</p>                            
                         </div>
 
