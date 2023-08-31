@@ -39,10 +39,10 @@ const Section = ({ items }) => {
     }
 
     return ( 
-        <div className="">
+        <div className="blue-700">
             <Filter items={items} setDisplayedItems={setDisplayedItems}/>
 
-            <div className="w-full grid grid-cols-4 sm:grid-cols-3 xs:grid-cols-2 grid-flow-dense gap-x-4 gap-y-4">
+            <div className="w-full grid grid-cols-4 sm:grid-cols-3 xs:grid-cols-2 grid-flow-dense gap-x-4 gap-y-4 sm:gap-y-6">
                 {displayedItems.map((item, index) => {
                     return (
                         <div 
@@ -58,7 +58,7 @@ const Section = ({ items }) => {
                             >
                                 <img className="w-full h-full object-cover object-top" src={item.img} alt="" />
                                 <button 
-                                    className="w-max p-2 m-auto absolute border border-neutral-500 hover:border-0 bottom-6 right-0 left-0 hover:scale-110 bg-white bg-opacity-40 hover:bg-opacity-100 rounded-full"
+                                    className="w-max p-2 m-auto absolute border border-neutral-500 hover:border-0 bottom-6 right-0 left-0 hover:scale-110 bg-white bg-opacity-40 hover:opacity-100 rounded-full"
                                     onClick={(e) => {handleCart(item, e)}}
                                     ref={cartButtonRef}
                                 >
@@ -69,11 +69,11 @@ const Section = ({ items }) => {
                                 <Link 
                                     to={`/productpage/${item.id}`}
                                     onClick={() => setProductPage(item.id)}
-                                    className="text-l mt-1 hover:underline"
+                                    className="text-[18px] mt-1 hover:underline"
                                 >
                                     {item.name}
                                 </Link>
-                                <p className="text-sm ">${item.price}</p>
+                                <p className="text-sm font-semibold">${item.price}</p>
                                 {/*<span className="text-xs text-red-400">{item.newArrival && 'New Arrival'}</span>*/}
 
                                 {/*favorite button*/}

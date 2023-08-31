@@ -1,6 +1,6 @@
 const Footer = () => {
     return (
-        <footer className="mt-24 text-sm leading-relaxed px-[3%] border-t border-black pt-8">
+        <footer className="mt-24 text-sm leading-relaxed px-[3%] bg-[#faf9f8] border-t border-black pt-8">
             <p className="text-8xl font-extrabold logo text-center">IGNIS</p>
             <div className="p-10 grid grid-cols-3 sm:grid-cols-2 gap-y-10 bottom-0 w-full">
                 <ul className="">

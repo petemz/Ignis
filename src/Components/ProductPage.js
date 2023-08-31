@@ -41,7 +41,7 @@ const ProductPage = () => {
                 <div 
                     ref={scrollableRef}
                     onWheel={handleScroll}
-                    className="-mn:w-1/2 overflow-x-hidden mn:h-[calc(100vh-173px)] mn:flex bg-red-500"
+                    className="-mn:w-1/2 overflow-x-hidden mn:h-[calc(100vh-173px)] mn:flex"
                 >
                     <img className="-mn:h-screen h-full object-cover" src={currentProduct.img} alt="" />
                     <img className="-mn:h-screen h-full object-cover" src={currentProduct.img} alt="" />

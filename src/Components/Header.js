@@ -40,7 +40,9 @@ const Header = ({color}) => {
                     <img className="w-6" src={hamburgerIcon} alt="" />
                 </button>
 
-                <Link className="text-6xl ml-[10%] xs:ml-[1%] sm:text-start text-center font-extrabold logo" to={"/"}>IGNIS</Link>
+                <span className=" ml-[10%] xs:ml-[1%] ">
+                    <Link className="text-6xl sm:text-start text-center font-extrabold logo" to={"/"}>IGNIS</Link>
+                </span>
 
                 <ul className="flex justify-end items-center h-max">
                     <li className="">

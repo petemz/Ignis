@@ -5,7 +5,7 @@ import ScrollTop from "./Utilities/ScrollTop"
 
 const App = () => {
   return (
-    <div className="App h-screen bg-[#faf9f8]">
+    <div className="App h-screen [#faf9f8]">
       <Header />
 
       <Routes>

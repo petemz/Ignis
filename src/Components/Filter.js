@@ -5,6 +5,10 @@ import sortIcon from "../Assets/Icons/sort.svg"
 import { uppercaseFirstLettter } from "../Utilities/Reusables"
 
 const Filter = ({ items, setDisplayedItems }) => {
+    const [isColorOpen, setIsColorOpen] = useState(false)
+    const [isMaterialOpen, setIsMaterialOpen] = useState(false)
+    const [isSizeOpen, setIsSizeOpen] = useState(false)
+
     const colorFilter = ['black', 'beige', 'orange', 'blue', 'brown', 'green', 'multi', 'pink']
     const materialFilter = ['silk', 'cotton', 'chiffon', 'denim', 'polyester', 'lace', 'leather', 'wool']
     const sizeFilter = ['xs', 's', 'm', 'l', 'xl', 'xxl', '3xl']
@@ -39,35 +43,58 @@ const Filter = ({ items, setDisplayedItems }) => {
         }
     }
 
-    const [isFilterOpen, setIsFilterOpen] = useState(false)
-    const [filterObj, setFilterObj] = useState({name: '', filters: []})
-    const filterRef = useRef(null)
+    const colorFilterRef = useRef(null)
+    const materialFilterRef = useRef(null)
+    const sizeFilterRef = useRef(null)
 
-    const handleFilterOpen = (filterName, filters) => {
-        if(isFilterOpen && filterName === filterObj.name) {
-            setIsFilterOpen(false) 
-            setFilterObj({})
-        } else if (isFilterOpen) {
-            setFilterObj({name: filterName, filters: filters})
-        } else if (isFilterOpen === false) {
-            setIsFilterOpen(true)
-            setFilterObj({name: filterName, filters: filters})
+    const filterButtonsRef = useRef(null)
+
+    const handleFilterOpen = (filterType) => {
+        if (filterType === 'color') {
+            setIsColorOpen(val => !val)
+            setIsMaterialOpen(false)
+            setIsSizeOpen(false)
+        } else if (filterType === 'material') {
+            setIsMaterialOpen(val => !val)
+            setIsColorOpen(false)
+            setIsSizeOpen(false)
+        } else if (filterType === 'size') {
+            setIsSizeOpen(val => !val)
+            setIsColorOpen(false)
+            setIsMaterialOpen(false)
         }
     }
 
-
     useEffect(() => {
-        const handleOutsideClick = (e) => {
+        const handleOutsideFilterClick = (e) => {
+            if (colorFilterRef.current && !colorFilterRef.current.contains(e.target) && filterButtonsRef.current.contains(e.target)) {
+                setIsColorOpen(false)
+            } else if (materialFilterRef.current && !materialFilterRef.current.contains(e.target) && filterButtonsRef.current.contains(e.target)) {
+                setIsMaterialOpen(false)
+            } else if (sizeFilterRef.current && !sizeFilterRef.current.contains(e.target) && filterButtonsRef.current.contains(e.target)) {
+                setIsSizeOpen(false)
+            }
+        }
+
+        document.addEventListener('mousedown', handleOutsideFilterClick)
+        
+        return () => {
+          document.removeEventListener('mousedown', handleOutsideFilterClick)
+        }
+    }, [])
+
+    useEffect(() => { 
+        const handleOutsideSortClick = (e) => {
             sortItemsRef.current && 
             !sortItemsRef.current.contains(e.target) && 
             !sortButtonRef.current.contains(e.target) && 
             setIsSortOpen(false)
         }
 
-        document.addEventListener('mousedown', handleOutsideClick)
+        document.addEventListener('mousedown', handleOutsideSortClick)
         
         return () => {
-          document.removeEventListener('mousedown', handleOutsideClick)
+          document.removeEventListener('mousedown', handleOutsideSortClick)
         }
     }, [])
 
@@ -76,15 +103,16 @@ const Filter = ({ items, setDisplayedItems }) => {
             <div className="flex text-sm relative">
                 <div className="flex relative">
                     <button 
-                        onClick={() => handleFilterOpen('color', colorFilter)}
+                    ref={filterButtonsRef}
+                        onClick={() => handleFilterOpen('color')}
                         className=" tracking-wide flex flex-w items-center mr-7 py-1 rounded-full border-gray-400"
                     >
                         <span className=" uppercase">color</span>
-                        <img className={`w-5 ml-2 ${filterObj.name === 'color' && 'rotate-180'}`} src={angleDown} alt="" />
+                        <img className={`w-5 ml-2 ${isColorOpen && 'rotate-180'}`} src={angleDown} alt="" />
                     </button>   
 
-                    {isFilterOpen && filterObj.name === 'color' &&
-                        <div ref={filterRef} className="absolute z-[9999] text-lg px-5 top-8 w-60 bg-white">
+                    {isColorOpen &&
+                        <div ref={colorFilterRef} className="absolute z-[9999] text-lg px-5 top-8 w-60 bg-white">
                             {colorFilter.map(filter => {
                                 return (
                                     <p className="my-4" key="filter">{uppercaseFirstLettter(filter)}</p>
@@ -96,15 +124,16 @@ const Filter = ({ items, setDisplayedItems }) => {
 
                 <div className="relative">
                     <button 
-                        onClick={() => handleFilterOpen('material', materialFilter)}
+                    ref={filterButtonsRef}
+                        onClick={() => handleFilterOpen('material')}
                         className=" tracking-wide flex flex-w items-center mr-7 py-1 rounded-full border-gray-400"
                     >
                         <span className=" uppercase">material</span>
-                        <img className={`w-5 ml-2 ${filterObj.name === 'material' && 'rotate-180'}`} src={angleDown} alt="" />
+                        <img className={`w-5 ml-2 ${isMaterialOpen && 'rotate-180'}`} src={angleDown} alt="" />
                     </button>
 
-                    {isFilterOpen && filterObj.name === 'material' &&
-                        <div ref={filterRef} className="absolute z-[9999] text-lg px-5 top-8 w-60 bg-white">
+                    {isMaterialOpen &&
+                        <div ref={materialFilterRef} className="absolute z-[9999] text-lg px-5 top-8 w-60 bg-white">
                             {materialFilter.map(filter => {
                                 return (
                                     <p className="my-4" key="filter">{uppercaseFirstLettter(filter)}</p>
@@ -116,15 +145,16 @@ const Filter = ({ items, setDisplayedItems }) => {
 
                 <div className="relative">
                     <button 
-                        onClick={() => handleFilterOpen('size', sizeFilter)}
+                    ref={filterButtonsRef}
+                        onClick={() => handleFilterOpen('size')}
                         className=" tracking-wide flex flex-w items-center mr-7 py-1 rounded-full border-gray-400"
                     >
                         <span className=" uppercase">size</span>
-                        <img className={`w-5 ml-2 ${filterObj.name === 'size' && 'rotate-180'}`} src={angleDown} alt="" />
+                        <img className={`w-5 ml-2 ${isSizeOpen && 'rotate-180'}`} src={angleDown} alt="" />
                     </button>
                     
-                    {isFilterOpen && filterObj.name === 'size' &&
-                        <div ref={filterRef} className="absolute z-[9999] text-lg px-5 top-8 w-60 bg-white">
+                    {isSizeOpen &&
+                        <div ref={sizeFilterRef} className="absolute z-[9999] text-lg px-5 top-8 w-60 bg-white">
                             {sizeFilter.map(filter => {
                                 return (
                                     <p className="my-4" key="filter">{uppercaseFirstLettter(filter)}</p>
